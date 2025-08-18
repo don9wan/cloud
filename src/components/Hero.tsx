@@ -78,28 +78,9 @@ export default function Hero() {
                 className="rounded-3xl shadow-2xl w-full h-auto max-w-lg mx-auto shimmer-highlight"
               />
 
-              {/* Floating Achievement Cards */}
-              <div className="absolute -bottom-6 -left-6 glass rounded-2xl p-4 animate-fade-in">
-                <div className="text-2xl font-bold text-primary">150%</div>
-                <div className="text-sm text-dark-muted dark:text-dark-muted">매출 증가율</div>
-              </div>
 
-              <div
-                className="absolute -top-6 -right-6 glass rounded-2xl p-4 animate-fade-in"
-                style={{ animationDelay: "0.2s" }}
-              >
-                <div className="text-2xl font-bold text-accent-cyan">4.8★</div>
-                <div className="text-sm text-dark-muted dark:text-dark-muted">고객 만족도</div>
-              </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <div className="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/40 rounded-full mt-2 animate-bounce"></div>
         </div>
       </div>
     </section>
