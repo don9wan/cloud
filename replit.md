@@ -1,6 +1,6 @@
 # Overview
 
-This is a Korean portfolio website for a Product Manager named 김도현 (Kim Do-hyun). The application is built as a full-stack web application with a React frontend and Express backend, showcasing the PM's professional experience, skills, projects, and articles. The site features a modern design with glass morphism effects, smooth animations, and responsive layout optimized for both desktop and mobile devices.
+This is a Korean portfolio website for a Product Manager named 김동완 (Dongwan Kim). The application is built as a full-stack web application with a React frontend and Express backend, showcasing the PM's professional experience, skills, projects, and articles. The site features a modern design with glass morphism effects, smooth animations, and responsive layout optimized for both desktop and mobile devices.
 
 # User Preferences
 

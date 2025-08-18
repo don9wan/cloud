@@ -31,7 +31,7 @@ export default function Navigation() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <a href="#" className="text-xl font-bold text-gradient font-display">
-              김도현
+              don9wan
             </a>
           </div>
 

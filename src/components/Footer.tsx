@@ -31,7 +31,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <a href="#" className="text-2xl font-bold text-gradient font-display mb-4 block">
-              김도현
+              don9wan
             </a>
             <p className="text-dark-muted dark:text-dark-muted mb-6 max-w-md">
               혁신적인 제품으로 사용자의 삶을 더 나은 방향으로 변화시키는 프로덕트 매니저입니다.
@@ -100,7 +100,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-dark-muted dark:text-dark-muted text-sm">
-            © 2024 김도현. All rights reserved.
+            © 2024 don9wan. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a
