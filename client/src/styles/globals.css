@@ -1,0 +1,46 @@
+/* Additional global styles that extend index.css */
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-700);
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .glass {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid var(--color-primary);
+  }
+}
+
+/* Print styles */
+@media print {
+  .glass {
+    background: white;
+    border: 1px solid #ccc;
+  }
+  
+  .text-gradient {
+    color: var(--color-primary) !important;
+    -webkit-text-fill-color: unset !important;
+  }
+}
