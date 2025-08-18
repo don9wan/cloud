@@ -85,9 +85,7 @@ export default function TechStack() {
             return (
               <div
                 key={item.name}
-                className={`glass rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover:scale-105 text-center scroll-trigger ${
-                  index > 0 && index % 4 !== 0 ? `stagger-${(index % 4)}` : ""
-                }`}
+                className="glass rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover:scale-105 text-center"
               >
                 <div className={`w-12 h-12 mx-auto mb-3 bg-${item.color} rounded-xl flex items-center justify-center`}>
                   <IconComponent className="w-6 h-6 text-white" />
