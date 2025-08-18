@@ -1,0 +1,266 @@
+> 목표
+> 
+
+> Apple iPhone 16 Pro 페이지의 미시적 인터랙션과 구성 철학(극단적 여백, 고대비 타이포, 시네마틱 시퀀스 스크롤)을 차용해, 첨부된 “portfolio” 레이아웃(히어로→아이콘/스택→하이라이트→프로젝트→블로그→FAQ→푸터 흐름)을
+> 
+> 
+> **새로운 포트폴리오 사이트**
+> 
+
+> 기술 스택은
+> 
+> 
+> **React + TypeScript + module.CSS + Framer Motion + GSAP(ScrollTrigger)**
+> 
+> **Lucide + Simple Icons**
+> 
+> **Pretendard(한글/영문)**
+> 
+
+## **0) 정의역/품질기준 (Definition of Done)**
+
+- 명령 한 번으로 실행/배포 가능: npm i && npm run dev 즉시 미리보기, npm run build && npm run start 정상 동작.
+- **모바일(360)–태블릿(768)–데스크톱(1280/1440+) 반응형**. CLS<0.1, LCP<2.5s 목표.
+- 접근성: Lighthouse A11y 90+, 시맨틱 태그/키보드 포커스/aria/명도 대비 준수.
+- SEO: 메타/OG/Twitter 카드/구조화 데이터(Organization/WebSite/Breadcrumb)/sitemap/robots.
+- 코드/디자인 **재사용성 극대화**: 토큰화(컬러/타이포/간격), 분자-유기체 컴포넌트, 훅/유틸 분리.
+- 스크롤/씬(Scroll) 애니메이션은 **저전력 장치 배려**(prefers-reduced-motion 지원) 및 성능 최적화(will-change, transform-only).
+- README에 실행/구조/커스터마이징/콘텐츠 주입 방법 명시. .replit에 run 스크립트 지정.
+- 최상단에 다크모드 토글버튼이 존재하여, 클릭 시 라이트모드-다크모드 전환 가능
+
+## **1) 정보구조(IA) & 내비게이션**
+
+- **헤더(Sticky)**: 좌측 로고(타이포 로고), 중앙 내비(앵커: 소개/핵심 역량/스택/경력/프로젝트/블로그/교육·어학/연락), 우측 CTA(이력서 다운로드, 연락하기). 스크롤 시 축소·블러 섀도우.
+- **푸터**: 좌측 로고/짧은 소개, 중앙 퀵링크, 우측 소셜(LI/GH/X/Mail), 저작권/약관/개인정보, 뉴스레터 입력(목업).
+- **스크롤스파이**: 현재 섹션 하이라이트.
+
+> 
+> 
+
+## **2) 섹션 구성(모듈형, 앵커 이동) — MECE**
+
+> 
+> 
+
+### **A. 본인 소개 (Hero)**
+
+- 극단적 여백의 **타이포 중심 히어로**: 대형 헤딩 2줄(한줄당 18–22ch), 서브카피, 2CTA(프로젝트 보기/이력서).
+- 우측/하단에 **시네마틱 미디어 카드**(이미지/짧은 비디오 자리표시자).
+- **애플식 입장 모션**: 텍스트 페이드업 + 미세한 레터스페이싱 애니(Framer Motion), 카드에 글래스·스펙큘러 하이라이트(가벼운 수평 스크럽).
+
+> 
+> 
+
+### **B. 내비게이션(보조) & 키워드 태그 스트립**
+
+- 히어로 하단에 검색/커맨드 박스 느낌의 바(placeholder: “무엇을 도와드릴까요?”), 바로 아래 **태그 칩 스트립**(#웹앱, #애니메이션, #리액트 등).
+- 칩은 스크롤 인뷰 시 스태거로 등장. 클릭 시 관련 섹션으로 스무스 스크롤.
+
+> 
+> 
+
+### **C. 핵심 역량 (Pillars)**
+
+- 3~4개 **하이라이트 카드**(문장 + 짧은 근거 3줄). 예: 인터랙션 설계, 성능 최적화, 디자인 시스템, 제품 사고.
+- 카드 호버: 미세한 Z-부상 + 내부 요소 패럴랙스.
+- 스크롤 트리거: 순차적 드로잉(선/보더) → 내용 페이드.
+
+> 
+> 
+
+### **D. 기술 스택 및 도구 (Stacks)**
+
+- **아이콘 그리드**(6열; sm:4, md:5, lg:8). React/Next/TS/Tailwind/Framer/GSAP/Three.js/Vite/Figma/Git/Vercel/AWS 등 30~40개.
+- 각 아이콘은 칩 형태 배지 + 툴팁. 인뷰 시 스태거; 호버 시 밝기/스케일.
+- 상단엔 **카테고리 탭**(FE/BE/Infra/Design/Analytics). 탭 전환은 모션으로 부드럽게.
+
+> 
+> 
+
+### **E. 경력사항 (Experience Timeline)**
+
+- **세로 타임라인**: 회사/역할/기간/임팩트(정량지표 포함) 카드.
+- 애니: 스크롤 시 라인이 위에서 그려지고(Stroke 애니), 각 카드가 좌/우 교차 페이드인.
+
+> 
+> 
+
+### **F. 프로젝트 상세 (Projects)**
+
+- **필터 가능한 카드 그리드**(All/WebApp/Landing/Interaction).
+- 카드: 커버 이미지, 제목, 한 줄 요약, 기술 배지, 링크(라이브/GitHub). 호버 시 커버 패럴랙스 + 글래스 헤더 떠오름.
+- **프로젝트 상세 페이지**(동적 라우팅): 문제–해결–성과(지표)–기술–역할–회고 구조, 미디어 갤러리(키보드 내비/라이트박스).
+- **애플식 시퀀스 섹션** 1개 포함:
+    - sticky 컨테이너에서 스크롤에 따라 이미지/카피가 **교차 전환**(페이드+마스크 슬라이드), 텍스트는 스텝별 강조.
+    - 성능: 이미지 스프라이트 최적화 또는 낮은 해상도부터 교체(LQIP/SQIP).
+
+> 
+> 
+
+### **G. 블로그 (Articles)**
+
+- 최신 6개 카드(제목/요약/태그/날짜). “더 보기” /posts.
+- MDX 렌더링, 코드 하이라이트, 자동 목차/앵커, SEO 메타.
+
+> 
+> 
+
+### **H. 교육 및 어학 (Education & Languages)**
+
+- 2열 카드: 학위/기관/기간/주요 과목/성과, 어학(점수/레벨/유효기간).
+- 인뷰 시 카운트업/바 애니(점수/레벨 시각화).
+
+> 
+> 
+
+### **I. 감사인사 및 연락처 (CTA)**
+
+- “프로젝트에서 바로 가치 드릴 수 있습니다.” 한 줄 헤딩 + 2CTA(이메일/캘린더 예약).
+- 버튼 호버 **웨이브/리플**(GPU transform).
+
+> 
+> 
+
+### **J. 푸터 (Footer)**
+
+- 소개/퀵링크/소셜/저작권/정책/뉴스레터.
+
+> 
+> 
+
+## **3) 디자인 시스템(토큰/컴포넌트) — 재사용성 최우선**
+
+- **컬러(다크 기본)**
+    - bg #000814, panel #0B1220, text #E6E8EC, muted #9AA4B2
+    - accent.cyan #22D3EE, accent.amber #F59E0B, accent.lime #A3E635
+    - 경계/글래스: 반투명 화이트 6–10%, **하이라이트 스펙큘러**를 위한 그라디언트 유틸
+- **타이포**
+    - Display: Inter/Pretendard Var 800–900, tracking-tight
+    - Body: Inter/Pretendard 400–600, 1.65 line-height
+    - 스케일: xs, sm, base, lg, xl, 2xl, 3xl, 4xl, 5xl (모바일에서 한 단계씩 축소)
+- **간격/레이아웃**
+    - 컨테이너: max-w-[1200~1280px], px-6 md:px-8
+    - 섹션 패딩: py-20(sm py-14)
+    - 라운드: rounded-2xl, 그림자 shadow-lg/hover:shadow-xl
+- **컴포넌트 원자화**: Button, Badge, Card, Chip, Pill, Accordion, Tabs, Tooltip, SectionHeader, Stat, Timeline, MediaFrame, IconGridItem
+- **유틸 클래스**: 글래스(배경 블러 + 투명 보더), 하이라이트 그라디언트, 패럴랙스 컨테이너, sticky-scroller
+
+> 
+> 
+
+## **4) 인터랙션 & 애니메이션(Apple 스타일 차용)**
+
+- **입장/전환 기본값**: Framer Motion opacity/y 페이드업, duration 0.24–0.36s, 스태거 0.04–0.08s
+- **히어로**: 텍스트 스텝 페이드 + 커서 깜빡임(의도 표현), 미디어 카드 글래스 하이라이트가 마우스에 따라 3–6px 스크럽
+- **아이콘 그리드**: 인뷰 스태거, 호버 밝기/스케일, 클릭 시 라벨 토글
+- **타임라인**: GSAP ScrollTrigger로 세로 라인 드로우 + 카드 좌·우 교차 슬라이드
+- **시퀀스 씬(프로젝트 상세)**: sticky 레이아웃, 프레임 이미지/카피 교차, 마스크 슬라이드 + 알파 페이드, 스크럽 기반
+- **버튼/칩**: spring hover, 포커스 링 명확
+- **성능**: transform/opacity만 사용, will-change 설정, 이미지 lazy, motion-reduce 분기
+
+> 
+> 
+
+## **5) 데이터 설계(콘텐츠 주입 지점) — 아래 키로 더미 데이터 채워넣고, 파일로 분리**
+
+- /content/profile.ts
+    - intro: { title, subtitle, ctas: [{label, href}], tags: string[] }
+- /content/skills.ts
+    - categories: FE/BE/Infra/Design/Analytics → 각 items: { name, level(1–5), iconSlug }
+- /content/experience.ts
+    - 타임라인: { company, role, period, summary, impacts: string[] }[]
+- /content/projects.ts
+    - { slug, title, summary, cover, stack: string[], links: { live?: string; github?: string }, highlights: string[], gallery: string[] }[]
+- /content/posts.ts or posts/*.mdx
+- /content/education.ts
+    - { school, degree, period, details: string[] }, languages: { name, score|level, date? }[]
+- /content/contact.ts
+    - { email, social: {github, linkedin, x, …}, resumeUrl }
+
+> 
+> 
+
+> 사용자가 제공할 실제 내용 키 가이드
+> 
+- **본인 소개**: title, subtitle, ctas, tags
+- **내비게이션**: 위 섹션 앵커 이름 고정(소개/핵심 역량/스택/경력/프로젝트/블로그/교육·어학/연락)
+- **핵심 역량**: 3~4개 pillar {title, bullets[]}
+- **기술 스택 및 도구**: categories + items
+- **경력사항**: 타임라인 배열
+- **프로젝트 상세**: projects 배열(+slug별 상세/갤러리)
+- **블로그**: mdx 또는 배열
+- **교육 및 어학**: education + languages
+- **감사/연락**: contact
+
+## 6) 폴더 구조
+
+src/
+app/
+layout.tsx
+page.tsx
+(sections)/
+Hero.tsx
+Icons.tsx
+Highlights.tsx
+Workflow.tsx
+Skills.tsx
+Projects.tsx
+Articles.tsx
+FAQ.tsx
+CTA.tsx
+components/
+ui/ (버튼, 배지, 카드, 아코디언 등)
+Nav.tsx
+Footer.tsx
+lib/
+seo.ts
+content/
+projects.ts
+posts/
+first.mdx
+second.mdx
+data/
+icons.ts
+public/
+images/ (더미 썸네일)
+resume.pdf
+styles/
+globals.css
+
+## **8) SEO & 메타**
+
+- next-seo로 기본 템플릿: title, description, OG 이미지(/public/og.png), twitter card.
+- robots.txt, sitemap.xml 자동 생성 유틸.
+- JSON-LD: Organization, WebSite, BreadcrumbList.
+
+> 
+> 
+
+## **9) 접근성/국제화**
+
+- 모든 의미 요소에 시맨틱 태그. 링크/버튼 구분, aria-* 속성.
+- 키보드 트랩 방지, 포커스 가시성.
+- 언어 lang="ko", 날짜/서식 한국어 기준.
+
+> 
+> 
+
+## **10) 성능 최적화**
+
+- next/image로 썸네일 처리, priority는 히어로 1개만.
+- 코드 스플리팅(프로젝트/아티클 섹션 지연 로드), 폰트 swap.
+
+> 
+> 
+
+## **11) 테스트**
+
+- 최소한의 스냅샷 테스트 1~2개(헤더 렌더, 섹션 존재).
+
+> 
+> 
+
+## **12) 마감**
+
+- 완성 후 README에: 실행/빌드 방법, 폴더 구조, 커스터마이징 포인트 정리.
+- 시작 시 필요한 모든 파일을 생성하고 샘플 콘텐츠를 채워 넣어 즉시 미리보기 가능하게 할 것.
