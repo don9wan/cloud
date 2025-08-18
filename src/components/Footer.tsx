@@ -97,26 +97,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Newsletter */}
-        <div className="border-t border-white/5 pt-8 mb-8">
-          <div className="max-w-md">
-            <h3 className="text-white dark:text-white font-semibold mb-4">뉴스레터 구독</h3>
-            <p className="text-dark-muted dark:text-dark-muted text-sm mb-4">
-              최신 프로덕트 인사이트와 트렌드를 이메일로 받아보세요.
-            </p>
-            <div className="flex gap-3">
-              <Input
-                type="email"
-                placeholder="이메일 주소"
-                className="flex-1 glass bg-white/5 border-white/10 text-white dark:text-white placeholder-dark-muted dark:placeholder-dark-muted focus:border-primary transition-colors duration-200"
-              />
-              <Button className="bg-primary text-white hover:bg-primary-700 transition-colors duration-200 font-medium">
-                구독
-              </Button>
-            </div>
-          </div>
-        </div>
-
         {/* Copyright */}
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-dark-muted dark:text-dark-muted text-sm">
