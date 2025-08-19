@@ -1,5 +1,6 @@
 import { Target, BarChart3, Users, TrendingUp } from "lucide-react";
 import { skillsData } from "../data/skills";
+import { useScrollTrigger } from "../hooks/useScrollTrigger";
 
 const iconMap = {
   target: Target,
@@ -17,6 +18,9 @@ const colorClassMap: Record<string, string> = {
 };
 
 export default function CoreCompetencies() {
+  // Initialize scroll trigger for animations
+  useScrollTrigger();
+  
   return (
     <section id="skills" className="section-padding competencies-section">
       <div className="container-custom">

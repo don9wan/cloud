@@ -1,7 +1,11 @@
 import { ArrowRight } from "lucide-react";
 import { articlesData } from "../data/articles";
+import { useScrollTrigger } from "../hooks/useScrollTrigger";
 
 export default function Articles() {
+  // Initialize scroll trigger for animations
+  useScrollTrigger();
+  
   return (
     <section id="articles" className="section-padding articles-section">
       <div className="container-custom">

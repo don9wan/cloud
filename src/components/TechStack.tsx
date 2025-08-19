@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { techStackData } from "../data/skills";
+import { useScrollTrigger } from "../hooks/useScrollTrigger";
 import { 
   BarChart, 
   Activity, 
@@ -40,6 +41,29 @@ const colorClassMap: Record<string, string> = {
 
 export default function TechStack() {
   const [activeCategory, setActiveCategory] = useState("all");
+  
+  // Initialize scroll trigger for animations
+  useScrollTrigger();
+
+  // Re-trigger animations when category changes
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const newItems = document.querySelectorAll('.techstack-item.scroll-trigger');
+      newItems.forEach((item) => {
+        // Check if item is in viewport
+        const rect = item.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        
+        if (isVisible) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+    }, 50); // Small delay to ensure DOM is updated
+    
+    return () => clearTimeout(timer);
+  }, [activeCategory]);
 
   const categories = [
     { id: "all", label: "전체" },
@@ -85,7 +109,7 @@ export default function TechStack() {
             const iconClass = colorClassMap[item.color] || 'analytics';
             return (
               <div
-                key={item.name}
+                key={`${activeCategory}-${item.category}-${item.name}-${index}`}
                 className={`techstack-item scroll-trigger stagger-${(index % 4) + 1}`}
               >
                 <div className={`techstack-icon ${iconClass}`}>

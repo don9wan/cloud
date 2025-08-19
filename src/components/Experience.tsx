@@ -1,5 +1,6 @@
 import { Briefcase, Laptop, Rocket } from "lucide-react";
 import { experienceData } from "../data/experience";
+import { useScrollTrigger } from "../hooks/useScrollTrigger";
 
 const iconMap = {
   briefcase: Briefcase,
@@ -15,6 +16,9 @@ const colorClassMap: Record<string, string> = {
 };
 
 export default function Experience() {
+  // Initialize scroll trigger for animations
+  useScrollTrigger();
+  
   return (
     <section id="experience" className="section-padding experience-section">
       <div className="container-custom">

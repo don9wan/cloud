@@ -1,5 +1,6 @@
 import { Mail, Calendar, Linkedin, Github, Twitter, Instagram } from "lucide-react";
 import { contactData } from "../data/contact";
+import { useScrollTrigger } from "../hooks/useScrollTrigger";
 
 const socialIcons = {
   linkedin: Linkedin,
@@ -9,6 +10,9 @@ const socialIcons = {
 };
 
 export default function Contact() {
+  // Initialize scroll trigger for animations
+  useScrollTrigger();
+  
   return (
     <section id="contact" className="section-padding contact-section">
       <div className="container-custom">
