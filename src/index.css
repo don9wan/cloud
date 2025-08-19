@@ -67,10 +67,19 @@ html, body, #root {
 }
 
 /* Light theme overrides */
-body.light {
+html.light {
   --text-primary: var(--light-text);
   --text-muted: var(--light-muted);
   --bg-primary: var(--light-bg);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --glass-hover: rgba(255, 255, 255, 0.8);
+  --glass-bg-solid: rgba(255, 255, 255, 0.95);
+}
+
+html.light body {
+  background-color: var(--light-bg);
+  color: var(--light-text);
 }
 
 /* Base Styles */
@@ -79,15 +88,10 @@ html {
 }
 
 body {
-  background-color: var(--dark-bg);
-  color: var(--dark-text);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   line-height: 1.6;
   transition: all 0.3s ease;
-}
-
-body.light {
-  background-color: var(--light-bg);
-  color: var(--light-text);
 }
 
 /* Typography */
@@ -112,7 +116,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 1.5rem;
 }
 
-body.light .glass {
+html.light .glass {
   background: var(--glass-light-bg);
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
