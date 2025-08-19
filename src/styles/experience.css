@@ -1,0 +1,164 @@
+/* Experience Component Styles */
+.experience-section {
+  background: var(--bg-primary);
+}
+
+.experience-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  font-family: var(--font-display);
+  text-align: center;
+}
+
+.experience-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  max-width: 48rem;
+  margin: 0 auto 5rem;
+  text-align: center;
+}
+
+.timeline-container {
+  position: relative;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 2rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--primary), var(--accent-cyan));
+}
+
+.timeline-items {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.timeline-icon {
+  flex-shrink: 0;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.timeline-icon.startup {
+  background-color: #3B82F6;
+}
+
+.timeline-icon.corporate {
+  background-color: #10B981;
+}
+
+.timeline-icon.product {
+  background-color: #F59E0B;
+}
+
+.timeline-content {
+  margin-left: 2rem;
+  flex: 1;
+}
+
+.timeline-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 1.5rem;
+  padding: 2rem;
+}
+
+.experience-period {
+  color: var(--accent-cyan);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.experience-role {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.experience-company {
+  color: var(--primary);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.experience-summary {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.experience-impacts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.experience-impacts li {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.experience-impacts li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+}
+
+@media (min-width: 768px) {
+  .timeline-line {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .timeline-icon {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .timeline-item.even .timeline-content {
+    width: 41.666667%;
+    margin-left: 0;
+    padding-right: 2rem;
+  }
+  
+  .timeline-item.odd .timeline-content {
+    width: 41.666667%;
+    margin-left: auto;
+    padding-left: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .experience-title {
+    font-size: 2rem;
+  }
+  
+  .timeline-card {
+    padding: 1.5rem;
+  }
+}

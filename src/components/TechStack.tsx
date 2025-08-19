@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { techStackData } from "@/data/skills";
+import { techStackData } from "../data/skills";
 import { 
   BarChart, 
   Activity, 
@@ -31,6 +30,14 @@ const iconMap = {
   database: Database,
 };
 
+// Map colors to CSS classes
+const colorClassMap: Record<string, string> = {
+  'blue-500': 'analytics',
+  'green-500': 'design',
+  'yellow-500': 'project',
+  'red-500': 'development',
+};
+
 export default function TechStack() {
   const [activeCategory, setActiveCategory] = useState("all");
 
@@ -47,50 +54,44 @@ export default function TechStack() {
     : techStackData.filter(item => item.category === activeCategory);
 
   return (
-    <section id="stack" className="section-padding bg-dark-panel dark:bg-dark-panel">
+    <section id="stack" className="section-padding techstack-section">
       <div className="container-custom">
-        <div className="text-center mb-20 scroll-trigger">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white dark:text-white mb-6 font-display">
+        <div className="scroll-trigger">
+          <h2 className="techstack-title">
             기술 스택
           </h2>
-          <p className="text-xl text-dark-muted dark:text-dark-muted max-w-3xl mx-auto">
+          <p className="techstack-subtitle">
             다양한 도구와 플랫폼을 활용하여 효율적인 제품 관리를 합니다
           </p>
         </div>
 
         {/* Category Tabs */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12 scroll-trigger">
+        <div className="techstack-categories scroll-trigger">
           {categories.map((category) => (
-            <Button
+            <button
               key={category.id}
-              variant="ghost"
-              className={`
-                px-6 py-3 rounded-full glass hover:bg-white/10 transition-all duration-200 font-medium
-                ${activeCategory === category.id 
-                  ? "bg-primary text-white hover:bg-primary-700" 
-                  : ""
-                }
-              `}
+              className={`techstack-category-btn ${activeCategory === category.id ? 'active' : ''}`}
               onClick={() => setActiveCategory(category.id)}
             >
               {category.label}
-            </Button>
+            </button>
           ))}
         </div>
 
         {/* Tech Stack Grid */}
-        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-6">
+        <div className="techstack-grid">
           {filteredItems.map((item, index) => {
             const IconComponent = iconMap[item.icon as keyof typeof iconMap];
+            const iconClass = colorClassMap[item.color] || 'analytics';
             return (
               <div
                 key={item.name}
-                className="glass rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover:scale-105 text-center"
+                className={`techstack-item scroll-trigger stagger-${(index % 4) + 1}`}
               >
-                <div className={`w-12 h-12 mx-auto mb-3 bg-${item.color} rounded-xl flex items-center justify-center`}>
+                <div className={`techstack-icon ${iconClass}`}>
                   <IconComponent className="w-6 h-6 text-white" />
                 </div>
-                <div className="text-sm font-medium text-white dark:text-white">
+                <div className="techstack-name">
                   {item.name}
                 </div>
               </div>

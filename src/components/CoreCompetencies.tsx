@@ -1,5 +1,5 @@
 import { Target, BarChart3, Users, TrendingUp } from "lucide-react";
-import { skillsData } from "@/data/skills";
+import { skillsData } from "../data/skills";
 
 const iconMap = {
   target: Target,
@@ -8,38 +8,45 @@ const iconMap = {
   "trending-up": TrendingUp,
 };
 
+// Map colors to CSS classes
+const colorClassMap: Record<string, string> = {
+  'blue-500': 'strategy',
+  'green-500': 'analytics',
+  'yellow-500': 'collaboration',
+  'red-500': 'growth',
+};
+
 export default function CoreCompetencies() {
   return (
-    <section id="skills" className="section-padding">
+    <section id="skills" className="section-padding competencies-section">
       <div className="container-custom">
-        <div className="text-center mb-20 scroll-trigger">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white dark:text-white mb-6 font-display">
+        <div className="scroll-trigger">
+          <h2 className="competencies-title">
             핵심 역량
           </h2>
-          <p className="text-xl text-dark-muted dark:text-dark-muted max-w-3xl mx-auto">
+          <p className="competencies-subtitle">
             데이터 기반 의사결정과 사용자 중심 사고로 제품의 성공을 이끕니다
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="competencies-grid">
           {skillsData.map((skill, index) => {
             const IconComponent = iconMap[skill.icon as keyof typeof iconMap];
+            const iconClass = colorClassMap[skill.color] || 'strategy';
             return (
               <div
                 key={skill.title}
-                className={`glass rounded-3xl p-8 hover:bg-white/10 transition-all duration-300 hover:scale-105 scroll-trigger ${
-                  index > 0 ? `stagger-${index}` : ""
-                }`}
+                className={`competency-card scroll-trigger stagger-${(index % 4) + 1}`}
               >
-                <div className={`w-16 h-16 bg-${skill.color} rounded-2xl flex items-center justify-center mb-6`}>
+                <div className={`competency-icon ${iconClass}`}>
                   <IconComponent className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-white dark:text-white mb-4">
+                <h3 className="competency-title">
                   {skill.title}
                 </h3>
-                <ul className="space-y-2 text-dark-muted dark:text-dark-muted">
+                <ul className="competency-list">
                   {skill.bullets.map((bullet) => (
-                    <li key={bullet}>• {bullet}</li>
+                    <li key={bullet}>{bullet}</li>
                   ))}
                 </ul>
               </div>

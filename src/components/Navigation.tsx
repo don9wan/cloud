@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Moon, Sun, Menu, Download, Mail } from "lucide-react";
-import { useTheme } from "@/hooks/useTheme.tsx";
+import { useTheme } from "../hooks/useTheme";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,123 +21,94 @@ export default function Navigation() {
   ];
 
   return (
-    <nav
-      id="navbar"
-      className="fixed top-0 left-0 right-0 z-50 glass border-b border-white/5 transition-all duration-300"
-    >
+    <nav id="navbar" className="navbar glass">
       <div className="container-custom">
-        <div className="flex items-center justify-between h-16">
+        <div className="navbar-container">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <a href="#" className="text-xl font-bold text-gradient font-display">
+          <div className="navbar-logo">
+            <a href="#" className="text-gradient">
               don9wan
             </a>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="nav-link text-dark-muted dark:text-dark-muted hover:text-white dark:hover:text-white transition-colors duration-200"
-                >
-                  {item.label}
-                </a>
-              ))}
-            </div>
+          <div className="navbar-menu">
+            {navItems.map((item) => (
+              <a key={item.href} href={item.href} className="nav-link">
+                {item.label}
+              </a>
+            ))}
           </div>
 
           {/* CTA and Theme Toggle */}
-          <div className="flex items-center space-x-4">
-            <Button
-              variant="ghost"
-              size="icon"
+          <div className="navbar-actions">
+            <button
               onClick={toggleTheme}
-              className="glass hover:bg-white/10 transition-colors duration-200"
+              className="theme-toggle"
               aria-label="테마 전환"
             >
               {theme === "dark" ? (
-                <Sun className="h-5 w-5" />
+                <Sun className="w-5 h-5" />
               ) : (
-                <Moon className="h-5 w-5" />
+                <Moon className="w-5 h-5" />
               )}
-            </Button>
+            </button>
 
-            <div className="hidden md:flex items-center space-x-3">
-              <Button
-                variant="ghost"
-                size="sm"
-                className="glass hover:bg-white/10 transition-colors duration-200"
-                asChild
+            <div className="hidden md:flex navbar-actions">
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-ghost"
               >
-                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-                  <Download className="mr-2 h-4 w-4" />
-                  이력서
-                </a>
-              </Button>
-              <Button
-                size="sm"
-                className="bg-primary hover:bg-primary-700 transition-all duration-200"
-                asChild
-              >
-                <a href="#contact">
-                  <Mail className="mr-2 h-4 w-4" />
-                  연락하기
-                </a>
-              </Button>
+                <Download className="w-4 h-4" style={{ marginRight: '0.5rem' }} />
+                이력서
+              </a>
+              <a href="#contact" className="btn btn-primary">
+                <Mail className="w-4 h-4" style={{ marginRight: '0.5rem' }} />
+                연락하기
+              </a>
             </div>
 
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden glass hover:bg-white/10 transition-colors duration-200"
+            <button
+              className="navbar-toggle"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              <Menu className="h-5 w-5" />
-            </Button>
+              <Menu className="w-5 h-5" />
+            </button>
           </div>
         </div>
 
         {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden glass border-t border-white/5">
-            <div className="px-2 pt-4 pb-6 space-y-3">
-              {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="block text-dark-text dark:text-dark-text hover:text-white dark:hover:text-white transition-colors duration-200 py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.label}
-                </a>
-              ))}
-              <div className="pt-4 space-y-3">
-                <Button
-                  variant="ghost"
-                  className="w-full justify-start glass hover:bg-white/10"
-                  asChild
-                >
-                  <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-                    <Download className="mr-2 h-4 w-4" />
-                    이력서 다운로드
-                  </a>
-                </Button>
-                <Button
-                  className="w-full bg-primary hover:bg-primary-700"
-                  asChild
-                >
-                  <a href="#contact">
-                    <Mail className="mr-2 h-4 w-4" />
-                    연락하기
-                  </a>
-                </Button>
-              </div>
+        <div className={`mobile-menu glass ${isMenuOpen ? 'open' : ''}`}>
+          <div className="mobile-menu-list">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="nav-link"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.label}
+              </a>
+            ))}
+            <div style={{ paddingTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-ghost"
+              >
+                <Download className="w-4 h-4" style={{ marginRight: '0.5rem' }} />
+                이력서 다운로드
+              </a>
+              <a href="#contact" className="btn btn-primary">
+                <Mail className="w-4 h-4" style={{ marginRight: '0.5rem' }} />
+                연락하기
+              </a>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );
