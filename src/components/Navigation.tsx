@@ -21,7 +21,7 @@ export default function Navigation() {
   ];
 
   return (
-    <nav id="navbar" className="navbar glass">
+    <nav id="navbar" className="navbar">
       <div className="container-custom">
         <div className="navbar-container">
           {/* Logo */}
@@ -80,7 +80,7 @@ export default function Navigation() {
         </div>
 
         {/* Mobile Menu */}
-        <div className={`mobile-menu glass ${isMenuOpen ? 'open' : ''}`}>
+        <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
           <div className="mobile-menu-list">
             {navItems.map((item) => (
               <a

@@ -1,81 +1,72 @@
-/* Contact Component Styles */
+/* Contact Section Styles */
 .contact-section {
-  background: var(--dark-panel);
+  background-color: var(--dark-panel);
+}
+
+body.light .contact-section {
+  background-color: var(--light-panel);
+}
+
+.contact-content {
+  max-width: 64rem;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .contact-title {
   font-size: 2.5rem;
-  font-weight: bold;
+  font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 1.5rem;
-  font-family: var(--font-display);
-  text-align: center;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .contact-title {
+    font-size: 3rem;
+  }
 }
 
 .contact-subtitle {
   font-size: 1.25rem;
   color: var(--text-muted);
-  max-width: 48rem;
-  margin: 0 auto 3rem;
-  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
 }
 
 .contact-buttons {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1.5rem;
   justify-content: center;
-  gap: 1rem;
   margin-bottom: 3rem;
 }
 
-.contact-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: var(--glass-bg);
-  color: var(--text-primary);
-  padding: 0.75rem 1.5rem;
-  border-radius: 9999px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  border: 1px solid var(--glass-border);
-  backdrop-filter: blur(10px);
-}
-
-.contact-btn:hover {
-  background: var(--glass-hover);
-  transform: translateY(-2px);
-}
-
-.contact-btn.primary {
-  background: var(--primary);
-  color: white;
-}
-
-.contact-btn.primary:hover {
-  background: var(--primary-hover);
+@media (min-width: 640px) {
+  .contact-buttons {
+    flex-direction: row;
+  }
 }
 
 .social-links {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
+  margin-top: 3rem;
 }
 
 .social-link {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 3rem;
-  height: 3rem;
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  border-radius: 50%;
-  color: var(--text-primary);
-  text-decoration: none;
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+  text-decoration: none;
+  color: var(--text-primary);
 }
 
 .social-link:hover {

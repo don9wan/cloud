@@ -16,7 +16,7 @@ export default function Hero() {
                 {profileData.title.split('\n').map((line, index) => (
                   <span key={index}>
                     {line}
-                    {index === 1 && <span className="text-gradient"> 창조하는</span>}
+                    {index === 1 && <span className="sparkle-text"> 창조하는</span>}
                     {index < profileData.title.split('\n').length - 1 && <br />}
                   </span>
                 ))}
