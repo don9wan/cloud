@@ -32,7 +32,7 @@
 
 .navbar-logo a {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-primary);
   text-decoration: none;
   font-family: var(--font-display);
@@ -54,7 +54,7 @@
 .nav-link {
   color: var(--text-muted);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 0.875rem;
   transition: color 0.2s ease;
   position: relative;

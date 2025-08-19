@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Pretendard:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600&display=swap');
 
 /* Component CSS Imports */
 @import './styles/globals.css';
@@ -25,7 +25,8 @@ html, body, #root {
   width: 100%;
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: 'Inter', 'Pretendard', system-ui, sans-serif;
+  font-family: 'Pretendard', system-ui, sans-serif;
+  font-weight: 400;
 }
 
 /* CSS Variables */
@@ -62,6 +63,10 @@ html, body, #root {
   --text-muted: var(--dark-muted);
   --bg-primary: var(--dark-bg);
   
+  /* Fonts */
+  --font-display: 'Pretendard', system-ui, sans-serif;
+  --font-body: 'Pretendard', system-ui, sans-serif;
+  
   --container-width: 1280px;
   --section-padding: 5rem;
 }
@@ -92,11 +97,12 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   transition: all 0.3s ease;
+  font-weight: 400;
 }
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.2;
   margin-bottom: 1rem;
 }
@@ -249,7 +255,7 @@ body.light .btn-ghost {
 
 .hero-title {
   font-size: 3rem;
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--dark-text);
@@ -311,7 +317,7 @@ body.light .hero-subtitle {
   padding: 0.5rem 1rem;
   border-radius: 9999px;
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 /* Hero Media */
@@ -363,7 +369,7 @@ body.light .contact-section {
 
 .contact-title {
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--dark-text);
   margin-bottom: 2rem;
 }
@@ -461,7 +467,7 @@ body.light .projects-section {
 
 .projects-title {
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--dark-text);
   margin-bottom: 1.5rem;
   text-align: center;
@@ -542,7 +548,7 @@ body.light .projects-subtitle {
 
 .project-title {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--dark-text);
   margin-bottom: 0.75rem;
 }
@@ -569,7 +575,7 @@ body.light .project-description {
 
 .articles-title {
   font-size: 2.5rem;
-  font-weight: bold;
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 1.5rem;
   font-family: var(--font-display);
@@ -622,7 +628,7 @@ body.light .project-description {
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .article-date {
@@ -632,7 +638,7 @@ body.light .project-description {
 
 .article-title {
   font-size: 1.25rem;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 0.75rem;
 }
 
@@ -730,7 +736,7 @@ body.light .project-description {
 
 .competencies-title {
   font-size: 2.5rem;
-  font-weight: bold;
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 1.5rem;
   font-family: var(--font-display);
@@ -793,7 +799,7 @@ body.light .project-description {
 
 .competency-title {
   font-size: 1.25rem;
-  font-weight: bold;
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 1rem;
 }
@@ -835,7 +841,7 @@ body.light .project-description {
 
 .experience-title {
   font-size: 2.5rem;
-  font-weight: bold;
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 1.5rem;
   font-family: var(--font-display);
@@ -914,20 +920,20 @@ body.light .project-description {
 .experience-period {
   color: var(--accent-cyan);
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 0.5rem;
 }
 
 .experience-role {
   font-size: 1.25rem;
-  font-weight: bold;
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 
 .experience-company {
   color: var(--primary);
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 1rem;
 }
 
@@ -996,7 +1002,7 @@ body.light .project-description {
 
 .techstack-title {
   font-size: 2.5rem;
-  font-weight: bold;
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 1.5rem;
   font-family: var(--font-display);
@@ -1026,7 +1032,7 @@ body.light .project-description {
   color: var(--text-primary);
   border: 1px solid var(--glass-border);
   backdrop-filter: blur(10px);
-  font-weight: 500;
+  font-weight: 400;
   font-size: 0.875rem;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -1113,7 +1119,7 @@ body.light .project-description {
 
 .techstack-name {
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--text-primary);
 }
 
