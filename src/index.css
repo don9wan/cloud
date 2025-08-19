@@ -346,8 +346,12 @@ body.light .hero-subtitle {
   display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .md\:flex {
+    display: flex;
+  }
+  
+  .lg\:flex {
     display: flex;
   }
 }

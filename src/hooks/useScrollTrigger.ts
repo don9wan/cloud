@@ -31,12 +31,12 @@ export function useScrollTrigger() {
     if (!navbar) return;
 
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        navbar.style.backgroundColor = "rgba(11, 18, 32, 0.95)";
+      if (window.scrollY > 80) {
+        navbar.style.backgroundColor = "rgba(255, 255, 255, 0.08)";
         navbar.style.backdropFilter = "blur(20px)";
       } else {
         navbar.style.backgroundColor = "rgba(255, 255, 255, 0.08)";
-        navbar.style.backdropFilter = "blur(16px)";
+        navbar.style.backdropFilter = "blur(20px)";
       }
     };
 

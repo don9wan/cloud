@@ -26,7 +26,7 @@ export default function Navigation() {
         <div className="navbar-container">
           {/* Logo */}
           <div className="navbar-logo">
-            <a href="#" className="text-gradient">
+            <a href="#">
               don9wan
             </a>
           </div>
@@ -54,7 +54,7 @@ export default function Navigation() {
               )}
             </button>
 
-            <div className="hidden md:flex navbar-actions">
+            <div className="hidden lg:flex navbar-actions">
               <a
                 href="/resume.pdf"
                 target="_blank"
