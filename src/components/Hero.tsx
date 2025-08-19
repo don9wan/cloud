@@ -16,14 +16,11 @@ export default function Hero() {
           {/* Hero Content */}
           <div className="hero-content">
             <div className="hero-text-container scroll-trigger">
+              {/* @TODO(): 소개 - 헤드라인 */}
               <h1 className="hero-title">
-                {profileData.title.split('\n').map((line, index) => (
-                  <span key={index}>
-                    {line}
-                    {index === 1 && <span className="sparkle-text"> 창조하는</span>}
-                    {index < profileData.title.split('\n').length - 1 && <br />}
-                  </span>
-                ))}
+                더 적은 시간으로<br />
+                <span className="sparkle-text">더 나은 선택</span>을<br />
+                할 수 있는 제품을.
               </h1>
               <p className="hero-subtitle">
                 {profileData.subtitle}

@@ -254,9 +254,9 @@ body.light .btn-ghost {
 }
 
 .hero-title {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 600;
-  line-height: 1.1;
+  line-height: 3.25rem;
   letter-spacing: -0.02em;
   color: var(--dark-text);
 }
@@ -267,12 +267,13 @@ body.light .hero-title {
 
 @media (min-width: 1024px) {
   .hero-title {
-    font-size: 4.5rem;
+    font-size: 4rem;
+    line-height: 5.25rem;
   }
 }
 
 .hero-subtitle {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   color: var(--dark-muted);
   line-height: 1.6;
   max-width: 32rem;
@@ -284,7 +285,7 @@ body.light .hero-subtitle {
 
 @media (min-width: 1024px) {
   .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -1156,6 +1157,7 @@ body.light .project-description {
   display: flex;
   align-items: center;
   gap: 1rem;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
 }
 
 .search-input {
@@ -1169,6 +1171,12 @@ body.light .project-description {
 
 .search-input::placeholder {
   color: var(--text-muted);
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0.3; }
 }
 
 .search-shortcuts {

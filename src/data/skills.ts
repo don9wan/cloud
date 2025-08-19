@@ -1,3 +1,4 @@
+//@TODO(): 기술스택
 export const skillsData = [
   {
     title: "제품 전략",
@@ -10,33 +11,33 @@ export const skillsData = [
     ]
   },
   {
-    title: "데이터 분석",
+    title: "개발 협업",
     icon: "bar-chart-3",
     color: "accent-cyan",
     bullets: [
-      "GA4, Mixpanel 활용",
-      "A/B 테스트 설계 및 분석",
-      "사용자 행동 분석"
+      "프론트/백엔드 프로세스 이해",
+      "애자일 프로세스 기반 협업",
+      "API 설계 및 문서화 지원"
     ]
   },
   {
-    title: "사용자 경험",
+    title: "UX 리서치",
     icon: "users",
     color: "accent-amber",
     bullets: [
       "사용자 인터뷰 및 리서치",
-      "페르소나 및 저니맵 작성",
+      "UX/UI 디자인 협업",
       "프로토타이핑 및 테스트"
     ]
   },
   {
-    title: "성장 전략",
-    icon: "trending-up",
-    color: "accent-lime",
+    title: "데이터 기반 성장 전략",
+    icon: "bar-chart-3",
+    color: "accent-cyan",
     bullets: [
-      "성장 지표 최적화",
-      "마케팅 퍼널 분석",
-      "레퍼럴 시스템 구축"
+      "사용자 행동 데이터 분석",
+      "A/B 테스트 설계 및 분석",
+      "GA4 및 도구 활용"
     ]
   }
 ];
