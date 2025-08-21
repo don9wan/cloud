@@ -58,7 +58,7 @@ body.light .projects-section {
 
 .project-image {
   width: 100%;
-  height: 12rem;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
 }
 
@@ -89,7 +89,7 @@ body.light .projects-section {
 
 .project-description {
   color: var(--text-muted);
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }

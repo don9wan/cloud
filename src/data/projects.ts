@@ -1,13 +1,13 @@
 export const projectsData = [
   {
     slug: "payment-app-renewal",
-    title: "간편결제 앱 리뉴얼",
-    summary: "사용자 여정 분석을 통해 결제 플로우를 간소화하고, 보안성을 강화한 간편결제 앱의 전면 리뉴얼 프로젝트입니다.",
+    title: "일렉베리 - 전기차 충전 결제까지 한 번에",
+    summary: "전기차 충전소 찾기부터 결제까지, 원스톱으로 제공하는 앱 서비스입니다. 시리즈 A 투자 유치한 주요기능을 개발했으며, 소프트웨어 2.0 리팩터링 및 유지보수 과정에 기여했습니다.",
     category: "mobile",
-    cover: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
-    tags: ["모바일 앱", "핀테크"],
-    stack: ["React Native", "Firebase", "A/B Testing"],
-    impact: "25% 전환율 향상",
+    cover: "/images/exp-elecvery.jpg",
+    tags: ["Android:Kotlin"],
+    //stack: ["React Native", "Firebase", "A/B Testing"],
+    //impact: "25% 전환율 향상",
     links: {
       live: "#",
       github: "#"
@@ -20,13 +20,13 @@ export const projectsData = [
   },
   {
     slug: "seller-dashboard",
-    title: "판매자 대시보드 구축",
-    summary: "실시간 매출 분석과 재고 관리 기능을 제공하는 통합 판매자 대시보드를 기획하고 개발했습니다.",
+    title: "AI사주컬쳐 - 내 손 안의 사주 챗봇",
+    summary: "AI 기반으로 개인 맞춤형 사주 분석과 챗봇 상담을 제공하는 웹앱 서비스입니다. 아웃소싱 클라이언트 분과 협업하여 프로젝트를 관리 및 조율하고, 디자인과 웹 개발을 담당했습니다.",
     category: "web",
-    cover: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
-    tags: ["웹 플랫폼", "E-commerce"],
-    stack: ["React", "D3.js", "Node.js"],
-    impact: "200% 등록률 증가",
+    cover: "/images/exp-sajuculuture.jpg",
+    tags: ["PM(Project)", "UX/UI Design", "React:TS"],
+    //stack: ["React", "D3.js", "Node.js"],
+    //impact: "200% 등록률 증가",
     links: {
       live: "#",
       github: "#"
@@ -39,13 +39,13 @@ export const projectsData = [
   },
   {
     slug: "customer-analytics",
-    title: "고객 분석 도구",
-    summary: "고객 행동 패턴 분석과 개인화 추천 기능을 제공하는 SaaS 분석 도구의 MVP를 설계하고 런칭했습니다.",
-    category: "saas",
-    cover: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
-    tags: ["SaaS 도구", "B2B"],
-    stack: ["Python", "TensorFlow", "AWS"],
-    impact: "30% 이탈률 감소",
+    title: "리픽 - 쇼핑몰 특가할인 모아보기",
+    summary: "각종 쇼핑몰의 한시적 특가 할인 정보를 집계-랭킹을 제공하는 웹앱 서비스입니다. 창업 프로젝트로 팀빌딩을 주관하여 프로덕트를 책임졌고, 소프트웨어 개발 외 모든 과정에 기여했습니다.",
+    category: "web",
+    cover: "/images/exp-repik.jpg",
+    tags: ["PM(Product)", "UX/UI Design", "Start-Up"],
+    //stack: ["Python", "TensorFlow", "AWS"],
+    //impact: "30% 이탈률 감소",
     links: {
       live: "#",
       github: "#"

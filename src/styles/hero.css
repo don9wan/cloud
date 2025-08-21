@@ -45,11 +45,13 @@
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--text-primary);
+  margin-top: 4rem;
 }
 
 @media (min-width: 1024px) {
   .hero-title {
     font-size: 4.5rem;
+    margin-top: 2rem;
   }
 }
 

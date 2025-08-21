@@ -529,7 +529,7 @@ body.light .projects-subtitle {
 
 .project-image {
   width: 100%;
-  height: 12rem;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
 }
 
@@ -564,7 +564,7 @@ body.light .project-title {
 
 .project-description {
   color: var(--dark-muted);
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
@@ -898,7 +898,8 @@ body.light .project-description {
 }
 
 .timeline-icon.startup {
-  background-color: #3B82F6;
+  background-color: rgba(0,0,0, 0.4);
+  backdrop-filter: blur(4px);
 }
 
 .timeline-icon.corporate {
@@ -923,7 +924,7 @@ body.light .project-description {
 }
 
 .experience-period {
-  color: var(--accent-cyan);
+  color: var(--text-muted);
   font-size: 0.875rem;
   font-weight: 400;
   margin-bottom: 0.5rem;
