@@ -22,37 +22,29 @@ const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
 
 export function ThemeProvider({
   children,
-  defaultTheme = "system",
+  defaultTheme = "dark",
   storageKey = "vite-ui-theme",
   ...props
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
-  );
+  // 강제로 다크모드 고정
+  const [theme, setTheme] = useState<Theme>("dark");
 
   useEffect(() => {
     const root = window.document.documentElement;
-
     root.classList.remove("light", "dark");
-
-    if (theme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark"
-        : "light";
-
-      root.classList.add(systemTheme);
-      return;
-    }
-
-    root.classList.add(theme);
-  }, [theme]);
+    // 항상 다크모드 적용
+    root.classList.add("dark");
+    
+    // localStorage에도 dark 저장
+    localStorage.setItem(storageKey, "dark");
+  }, [storageKey]);
 
   const value = {
-    theme,
+    theme: "dark" as Theme,
     setTheme: (theme: Theme) => {
-      localStorage.setItem(storageKey, theme);
-      setTheme(theme);
+      // 다크모드 강제 고정 - setTheme 호출 무시
+      console.warn("테마 변경이 비활성화되었습니다. 다크모드로 고정됩니다.");
+      return;
     },
   };
 

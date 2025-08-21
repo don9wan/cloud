@@ -67,10 +67,13 @@ export default function Navigation() {
 
           {/* CTA and Theme Toggle */}
           <div className="navbar-actions">
+            {/* 테마 토글 버튼 임시 비활성화 - 다크모드 고정 */}
+            {/* 
             <button
               onClick={toggleTheme}
               className="theme-toggle"
               aria-label="테마 전환"
+              style={{ display: 'none' }}
             >
               {theme === "dark" ? (
                 <Sun className="w-5 h-5" />
@@ -78,6 +81,7 @@ export default function Navigation() {
                 <Moon className="w-5 h-5" />
               )}
             </button>
+            */}
 
             <div className="hidden lg:flex navbar-actions">
               <a
