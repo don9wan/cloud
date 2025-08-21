@@ -31,6 +31,13 @@
   bottom: 0;
   width: 2px;
   background: linear-gradient(to bottom, #303030, white);
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: transform 1.5s ease-out;
+}
+
+.timeline-line.animate {
+  transform: scaleY(1);
 }
 
 .timeline-items {
@@ -132,7 +139,12 @@
 @media (min-width: 1024px) {
   .timeline-line {
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) scaleY(0);
+    transform-origin: top;
+  }
+  
+  .timeline-line.animate {
+    transform: translateX(-50%) scaleY(1);
   }
   
   .timeline-icon {

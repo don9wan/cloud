@@ -11,6 +11,17 @@ export function useScrollTrigger() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("active");
+          
+          // Special handling for timeline container
+          if (entry.target.classList.contains("timeline-container")) {
+            const timelineLine = entry.target.querySelector(".timeline-line");
+            if (timelineLine) {
+              // Add animate class after a short delay for better visual effect
+              setTimeout(() => {
+                timelineLine.classList.add("animate");
+              }, 200);
+            }
+          }
         }
       });
     }, observerOptions);

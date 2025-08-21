@@ -31,7 +31,7 @@ export default function Experience() {
           </p>
         </div>
 
-        <div className="timeline-container">
+        <div className="timeline-container scroll-trigger">
           {/* Timeline Line */}
           <div className="timeline-line"></div>
 
