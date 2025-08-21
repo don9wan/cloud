@@ -35,15 +35,13 @@ export default function Contact() {
                 <Mail className="w-5 h-5" style={{ marginRight: '0.75rem' }} />
                 이메일 보내기
               </a>
-              <a
-                href={contactData.calendar}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => alert('이력서 준비 중입니다.')}
                 className="btn btn-ghost glass"
               >
                 <Download className="w-5 h-5" style={{ marginRight: '0.75rem' }} />
                 이력서 다운로드
-              </a>
+              </button>
             </div>            {/* Social Links */}
             <div className="social-links scroll-trigger stagger-2">
               {Object.entries(contactData.social).map(([platform, url]) => {

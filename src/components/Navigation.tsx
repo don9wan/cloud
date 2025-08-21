@@ -84,15 +84,13 @@ export default function Navigation() {
             */}
 
             <div className="hidden lg:flex navbar-actions">
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => alert('이력서 준비 중입니다.')}
                 className="btn btn-ghost"
               >
                 <Download className="w-4 h-4" style={{ marginRight: '0.5rem' }} />
                 이력서
-              </a>
+              </button>
               <a 
                 href="#contact" 
                 className="btn btn-primary"
@@ -126,15 +124,13 @@ export default function Navigation() {
               </a>
             ))}
             <div style={{ paddingTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => alert('이력서 준비 중입니다.')}
                 className="btn btn-ghost"
               >
                 <Download className="w-4 h-4" style={{ marginRight: '0.5rem' }} />
                 이력서 다운로드
-              </a>
+              </button>
               <a 
                 href="#contact" 
                 className="btn btn-primary"

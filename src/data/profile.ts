@@ -15,6 +15,7 @@ export const profileData = {
   tags: [
     "Product Management",
     "User Experience",
+    "Software Development",
     "Data Analytics", 
     "Communication"
   ]

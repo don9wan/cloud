@@ -29,20 +29,31 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <div className="hero-buttons scroll-trigger stagger-1">
-              {profileData.ctas.map((cta, index) => (
-                <a
-                  key={index}
-                  href={cta.href}
-                  className={`btn ${index === 0 ? "btn-primary" : "btn-ghost"}`}
-                >
-                  {cta.label}
-                  {index === 0 ? (
-                    <ArrowRight className="btn-icon" />
-                  ) : (
-                    <Download className="btn-icon" />
-                  )}
-                </a>
-              ))}
+              {profileData.ctas.map((cta, index) => {
+                if (index === 0) {
+                  return (
+                    <a
+                      key={index}
+                      href={cta.href}
+                      className="btn btn-primary"
+                    >
+                      {cta.label}
+                      <ArrowRight className="btn-icon" />
+                    </a>
+                  );
+                } else {
+                  return (
+                    <button
+                      key={index}
+                      onClick={() => alert('이력서 준비 중입니다.')}
+                      className="btn btn-ghost"
+                    >
+                      {cta.label}
+                      <Download className="btn-icon" />
+                    </button>
+                  );
+                }
+              })}
             </div>
 
             {/* Tags */}
@@ -52,7 +63,7 @@ export default function Hero() {
                   key={tag}
                   className="tag glass"
                 >
-                  #{tag}
+                  {tag}
                 </span>
               ))}
             </div>
