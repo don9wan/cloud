@@ -92,9 +92,8 @@ export default function Navigation() {
                 이력서
               </button>
               <a 
-                href="#contact" 
+                href="mailto:pm.don9wan@tukorea.ac.kr" 
                 className="btn btn-primary"
-                onClick={(e) => handleNavClick(e, "#contact")}
               >
                 <Mail className="w-4 h-4" style={{ marginRight: '0.5rem' }} />
                 연락하기
@@ -132,9 +131,8 @@ export default function Navigation() {
                 이력서 다운로드
               </button>
               <a 
-                href="#contact" 
+                href="mailto:pm.don9wan@tukorea.ac.kr" 
                 className="btn btn-primary"
-                onClick={(e) => handleNavClick(e, "#contact")}
               >
                 <Mail className="w-4 h-4" style={{ marginRight: '0.5rem' }} />
                 연락하기
