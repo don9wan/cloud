@@ -10,7 +10,6 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { useScrollTrigger } from "@/hooks/useScrollTrigger";
 import Education from "../components/Education";
-import Awards from "../components/Awards";
 
 export default function Home() {
   useScrollTrigger();
@@ -34,7 +33,6 @@ export default function Home() {
         <Experience />
         <Projects />
         <Education />
-        <Awards />
         <Contact />
       </main>
       

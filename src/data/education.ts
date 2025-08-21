@@ -1,10 +1,9 @@
 export const educationData = [
   {
     school: "금오공과대학교",
+    type: "학사",
     degree: "전자공학부 IT융합전공, 소프트웨어공학 복수전공",
     period: "2018 - 2021",
-    type: "학사",
-    color: "primary",
     summary: "컨텐츠 관련 기술, 미디어 프로세싱 및 인터렉티브 미디어 프로그래밍 학습 기초를 다졌습니다.",
     courses: [
       "교육과정 1",
@@ -13,10 +12,9 @@ export const educationData = [
   },
   {
     school: "한국공학대학교",
+    type: "학사",
     degree: "경영학부 IT경영전공",
     period: "2024 - 2025",
-    type: "학사",
-    color: "accent-cyan",
     summary: "컴퓨터 그래픽, 3D 모델링, 영상 편집, 컴퓨터 음악 등 디지털 콘텐츠 제작 기술을 교육받았습니다.",
     courses: [
       "교육과정 1",
