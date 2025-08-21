@@ -1,6 +1,7 @@
-import { Mail, Calendar, Linkedin, Github, Twitter, Instagram } from "lucide-react";
+import { Mail, Calendar, Linkedin, Github, Twitter, Instagram, Download } from "lucide-react";
 import { contactData } from "../data/contact";
 import { useScrollTrigger } from "../hooks/useScrollTrigger";
+import "../styles/contact.css";
 
 const socialIcons = {
   linkedin: Linkedin,
@@ -12,7 +13,7 @@ const socialIcons = {
 export default function Contact() {
   // Initialize scroll trigger for animations
   useScrollTrigger();
-  
+
   return (
     <section id="contact" className="section-padding contact-section">
       <div className="container-custom">
@@ -20,7 +21,7 @@ export default function Contact() {
           <div className="scroll-trigger">
             <h2 className="contact-title">
               함께 혁신적인 제품을<br />
-              <span className="text-gradient">만들어보세요</span>
+              <span className="sparkle-text-infinite">만들어보세요</span>
             </h2>
             <p className="contact-subtitle">
               {contactData.message}
@@ -40,8 +41,8 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="btn btn-ghost glass"
               >
-                <Calendar className="w-5 h-5" style={{ marginRight: '0.75rem' }} />
-                미팅 예약하기
+                <Download className="w-5 h-5" style={{ marginRight: '0.75rem' }} />
+                이력서 다운로드
               </a>
             </div>            {/* Social Links */}
             <div className="social-links scroll-trigger stagger-2">

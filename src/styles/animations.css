@@ -42,6 +42,7 @@
 
 /* Sparkle text effect - 텍스트에만 적용 */
 .sparkle-text {
+  font-weight: 700;
   position: relative;
   background: linear-gradient(90deg, 
     var(--primary-color) 0%, 
