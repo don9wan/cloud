@@ -16,7 +16,7 @@ export default function Navigation() {
     { href: "#stack", label: "스택" },
     { href: "#experience", label: "경력" },
     { href: "#projects", label: "프로젝트" },
-    { href: "#articles", label: "아티클" },
+    { href: "#education", label: "교육 및 실적" },
     { href: "#contact", label: "연락" },
   ];
 
