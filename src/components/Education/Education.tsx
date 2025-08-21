@@ -1,7 +1,7 @@
 import { awardsData } from "../../data/awards";
 import { educationData } from "../../data/education";
 import { useScrollTrigger } from "../../hooks/useScrollTrigger";
-import "../styles/education.css";
+import "./education.css";
 
 export default function Education() {
   // Initialize scroll trigger for animations

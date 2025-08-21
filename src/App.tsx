@@ -4,7 +4,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "./components/ui/toaster";
 import { TooltipProvider } from "./components/ui/tooltip";
 import { ThemeProvider } from "./hooks/useTheme.tsx";
-import ScrollToTop from "./components/ScrollToTop/ScrollToTop.tsx";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import Home from "./pages/Home";
 import NotFound from "./pages/not-found";
 

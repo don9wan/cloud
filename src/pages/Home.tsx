@@ -1,14 +1,14 @@
 import { useEffect } from "react";
-import Navigation from "@/components/Navigation";
-import Hero from "@/components/Hero";
-import SearchBar from "@/components/SearchBar";
-import CoreCompetencies from "@/components/CoreCompetencies";
-import TechStack from "@/components/TechStack";
-import Experience from "@/components/Experience";
-import Projects from "@/components/Projects";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
-import { useScrollTrigger } from "@/hooks/useScrollTrigger";
+import Navigation from "../components/Navigation/Navigation";
+import Hero from "../components/Hero/Hero";
+import SearchBar from "../components/SearchBar/SearchBar";
+import CoreCompetencies from "../components/CoreCompetencies";
+import TechStack from "../components/TechStack/TechStack";
+import Experience from "../components/Experience/Experience";
+import Projects from "../components/Projects/Projects";
+import Contact from "../components/Contact/Contact";
+import Footer from "../components/Footer/Footer";
+import { useScrollTrigger } from "../hooks/useScrollTrigger";
 import Education from "../components/Education/Education";
 
 export default function Home() {

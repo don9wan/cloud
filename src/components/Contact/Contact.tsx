@@ -1,13 +1,13 @@
-import { Mail, Calendar, Linkedin, Github, Instagram, Download, BookOpen } from "lucide-react";
+import { Mail, Calendar, Linkedin, Github, Twitter, Instagram, Download, BookOpen } from "lucide-react";
 import { contactData } from "../../data/contact";
 import { useScrollTrigger } from "../../hooks/useScrollTrigger";
-import "../styles/contact.css";
+import "./contact.css";
 
 const socialIcons = {
   linkedin: Linkedin,
   github: Github,
-  velog: BookOpen,
   instagram: Instagram,
+  velog: BookOpen,
 };
 
 export default function Contact() {
@@ -36,13 +36,14 @@ export default function Contact() {
                 이메일 보내기
               </a>
               <button
-                onClick={() => alert('이력서 준비 중입니다.')}
+                onClick={() => alert('준비 중입니다.')}
                 className="btn btn-ghost glass"
               >
                 <Download className="w-5 h-5" style={{ marginRight: '0.75rem' }} />
                 이력서 다운로드
               </button>
-            </div>            {/* Social Links */}
+            </div>
+            {/* Social Links */}
             <div className="social-links scroll-trigger stagger-2">
               {Object.entries(contactData.social).map(([platform, url]) => {
                 const IconComponent = socialIcons[platform as keyof typeof socialIcons];
