@@ -1,0 +1,73 @@
+/* Scroll To Top Button Styles */
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  width: 3rem;
+  height: 3rem;
+  background: var(--primary);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  
+  /* GPU 가속을 위한 3D transform 사용 */
+  transform: translate3d(0, 20px, 0);
+  opacity: 0;
+  visibility: hidden;
+  
+  /* 개별 속성별 transition으로 최적화 */
+  transition: 
+    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+  
+  /* 성능 최적화를 위한 will-change */
+  will-change: transform, opacity;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translate3d(0, 0, 0);
+}
+
+.scroll-to-top:hover {
+  background: var(--primary-hover);
+  transform: translate3d(0, -2px, 0);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-to-top:active {
+  transform: translate3d(0, 0, 0);
+}
+
+/* 모바일에서 크기 조정 */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+/* 다크 모드 스타일 */
+@media (prefers-color-scheme: dark) {
+  .scroll-to-top {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+  }
+  
+  .scroll-to-top:hover {
+    background: var(--primary);
+  }
+}
