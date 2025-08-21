@@ -20,6 +20,26 @@ export default function Navigation() {
     { href: "#contact", label: "연락" },
   ];
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.substring(1); // Remove '#'
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      const navbarHeight = 64; // 4rem = 64px
+      const elementPosition = targetElement.offsetTop;
+      const offsetPosition = elementPosition - navbarHeight;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+    
+    // Close mobile menu if open
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav id="navbar" className="navbar">
       <div className="container-custom">
@@ -34,7 +54,12 @@ export default function Navigation() {
           {/* Desktop Navigation */}
           <div className="navbar-menu">
             {navItems.map((item) => (
-              <a key={item.href} href={item.href} className="nav-link">
+              <a 
+                key={item.href} 
+                href={item.href} 
+                className="nav-link"
+                onClick={(e) => handleNavClick(e, item.href)}
+              >
                 {item.label}
               </a>
             ))}
@@ -64,7 +89,11 @@ export default function Navigation() {
                 <Download className="w-4 h-4" style={{ marginRight: '0.5rem' }} />
                 이력서
               </a>
-              <a href="#contact" className="btn btn-primary">
+              <a 
+                href="#contact" 
+                className="btn btn-primary"
+                onClick={(e) => handleNavClick(e, "#contact")}
+              >
                 <Mail className="w-4 h-4" style={{ marginRight: '0.5rem' }} />
                 연락하기
               </a>
@@ -87,7 +116,7 @@ export default function Navigation() {
                 key={item.href}
                 href={item.href}
                 className="nav-link"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => handleNavClick(e, item.href)}
               >
                 {item.label}
               </a>
@@ -102,7 +131,11 @@ export default function Navigation() {
                 <Download className="w-4 h-4" style={{ marginRight: '0.5rem' }} />
                 이력서 다운로드
               </a>
-              <a href="#contact" className="btn btn-primary">
+              <a 
+                href="#contact" 
+                className="btn btn-primary"
+                onClick={(e) => handleNavClick(e, "#contact")}
+              >
                 <Mail className="w-4 h-4" style={{ marginRight: '0.5rem' }} />
                 연락하기
               </a>

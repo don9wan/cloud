@@ -12,7 +12,7 @@ export default function Education() {
       <div className="container-custom">
         <div className="scroll-trigger">
           <h2 className="education-title">
-            교육 및 대외활동
+            교육 및 대외실적
           </h2>
           <p className="education-subtitle">
             IT 서비스 관리에 필요한 다양한 분야에 대한 지식을 체득하고, 실적을 쌓아왔습니다.

@@ -63,7 +63,8 @@ export function useScrollTrigger() {
       
       let current = "";
       sections.forEach((section) => {
-        const sectionTop = (section as HTMLElement).offsetTop - 100;
+        // 네비게이션 바 높이(4rem = 64px) + 여유공간을 고려한 오프셋
+        const sectionTop = (section as HTMLElement).offsetTop - 80;
         if (window.scrollY >= sectionTop) {
           current = section.getAttribute("id") || "";
         }
