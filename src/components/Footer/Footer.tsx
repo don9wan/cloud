@@ -1,5 +1,5 @@
 import { Linkedin, Github, Twitter, Mail } from "lucide-react";
-import { contactData } from "../data/contact";
+import { contactData } from "../../data/contact";
 
 export default function Footer() {
   return (

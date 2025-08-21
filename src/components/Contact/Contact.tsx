@@ -1,6 +1,6 @@
 import { Mail, Calendar, Linkedin, Github, Instagram, Download, BookOpen } from "lucide-react";
-import { contactData } from "../data/contact";
-import { useScrollTrigger } from "../hooks/useScrollTrigger";
+import { contactData } from "../../data/contact";
+import { useScrollTrigger } from "../../hooks/useScrollTrigger";
 import "../styles/contact.css";
 
 const socialIcons = {

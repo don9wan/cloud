@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
-import { articlesData } from "../data/articles";
-import { useScrollTrigger } from "../hooks/useScrollTrigger";
+import { articlesData } from "../../data/articles";
+import { useScrollTrigger } from "../../hooks/useScrollTrigger";
 
 export default function Articles() {
   // Initialize scroll trigger for animations

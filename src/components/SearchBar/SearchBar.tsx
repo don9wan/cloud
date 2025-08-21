@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Search } from "lucide-react";
-import { useScrollTrigger } from "../hooks/useScrollTrigger";
+import { useScrollTrigger } from "../../hooks/useScrollTrigger";
 
 export default function SearchBar() {
   // Initialize scroll trigger for animations

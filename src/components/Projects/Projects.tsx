@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ExternalLink, Github, ArrowRight } from "lucide-react";
-import { projectsData } from "../data/projects";
-import { useScrollTrigger } from "../hooks/useScrollTrigger";
+import { projectsData } from "../../data/projects";
+import { useScrollTrigger } from "../../hooks/useScrollTrigger";
 
 export default function Projects() {
   // Initialize scroll trigger for animations

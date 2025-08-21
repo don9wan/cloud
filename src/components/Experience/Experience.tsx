@@ -1,6 +1,6 @@
 import { Briefcase, Laptop, Rocket } from "lucide-react";
-import { experienceData } from "../data/experience";
-import { useScrollTrigger } from "../hooks/useScrollTrigger";
+import { experienceData } from "../../data/experience";
+import { useScrollTrigger } from "../../hooks/useScrollTrigger";
 
 const iconMap = {
   briefcase: Briefcase,

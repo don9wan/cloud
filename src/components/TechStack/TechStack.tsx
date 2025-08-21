@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { techStackData } from "../data/skills";
-import { useScrollTrigger } from "../hooks/useScrollTrigger";
+import { techStackData } from "../../data/skills";
+import { useScrollTrigger } from "../../hooks/useScrollTrigger";
 import { 
   BarChart, 
   Activity, 

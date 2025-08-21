@@ -9,7 +9,7 @@ import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { useScrollTrigger } from "@/hooks/useScrollTrigger";
-import Education from "../components/Education";
+import Education from "../components/Education/Education";
 
 export default function Home() {
   useScrollTrigger();
