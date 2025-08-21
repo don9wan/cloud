@@ -5,27 +5,19 @@
 
 .experience-title {
   font-size: 2.5rem;
-  font-weight: bold;
-  color: var(--dark-text);
+  font-weight: 600;
+  color: var(--text-primary);
   margin-bottom: 1.5rem;
   font-family: var(--font-display);
   text-align: center;
 }
 
-body.light .experience-title {
-  color: var(--light-text);
-}
-
 .experience-subtitle {
   font-size: 1.25rem;
-  color: var(--dark-muted);
+  color: var(--text-muted);
   max-width: 48rem;
   margin: 0 auto 5rem;
   text-align: center;
-}
-
-body.light .experience-subtitle {
-  color: var(--light-muted);
 }
 
 .timeline-container {
@@ -38,7 +30,7 @@ body.light .experience-subtitle {
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(to bottom, var(--primary-color), var(--accent-cyan));
+  background: linear-gradient(to bottom, #303030, white);
 }
 
 .timeline-items {
@@ -50,7 +42,7 @@ body.light .experience-subtitle {
 .timeline-item {
   position: relative;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .timeline-icon {
@@ -65,7 +57,8 @@ body.light .experience-subtitle {
 }
 
 .timeline-icon.startup {
-  background-color: #3B82F6;
+  background-color: rgba(0,0,0, 0.4);
+  backdrop-filter: blur(4px);
 }
 
 .timeline-icon.corporate {
@@ -79,7 +72,6 @@ body.light .experience-subtitle {
 .timeline-content {
   margin-left: 2rem;
   flex: 1;
-  max-width: 600px;
 }
 
 .timeline-card {
@@ -91,37 +83,29 @@ body.light .experience-subtitle {
 }
 
 .experience-period {
-  color: var(--accent-cyan);
+  color: var(--text-muted);
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 0.5rem;
 }
 
 .experience-role {
   font-size: 1.25rem;
-  font-weight: bold;
-  color: var(--dark-text);
+  font-weight: 600;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 
-body.light .experience-role {
-  color: var(--light-text);
-}
-
 .experience-company {
-  color: var(--primary-color);
-  font-weight: 500;
+  color: var(--primary);
+  font-weight: 400;
   margin-bottom: 1rem;
 }
 
 .experience-summary {
-  color: var(--dark-muted);
+  color: var(--text-muted);
   margin-bottom: 1rem;
   line-height: 1.6;
-}
-
-body.light .experience-summary {
-  color: var(--light-muted);
 }
 
 .experience-impacts {
@@ -131,56 +115,46 @@ body.light .experience-summary {
 }
 
 .experience-impacts li {
-  color: var(--dark-muted);
+  color: var(--text-muted);
   font-size: 0.875rem;
   margin-bottom: 0.5rem;
   position: relative;
   padding-left: 1rem;
 }
 
-body.light .experience-impacts li {
-  color: var(--light-muted);
-}
-
 .experience-impacts li::before {
   content: "•";
   position: absolute;
   left: 0;
-  color: var(--primary-color);
+  color: var(--primary);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .timeline-line {
     left: 50%;
     transform: translateX(-50%);
-  }
-  
-  .timeline-item {
-    align-items: flex-start;
-    justify-content: center;
   }
   
   .timeline-icon {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 0;
   }
-  
-  .timeline-item.even .timeline-content {
+}
+
+@media (min-width: 1024px) {
+  .timeline-content-left {
     width: 45%;
-    max-width: 400px;
     margin-left: 0;
     margin-right: auto;
-    padding-right: 3rem;
+    padding-right: 0;
   }
   
-  .timeline-item.odd .timeline-content {
+  .timeline-content-right {
     width: 45%;
-    max-width: 400px;
     margin-left: auto;
     margin-right: 0;
-    padding-left: 3rem;
+    padding-left: 0;
   }
 }
 
@@ -188,38 +162,22 @@ body.light .experience-impacts li {
   .experience-title {
     font-size: 2rem;
   }
-  
-  .timeline-card {
-    padding: 1.5rem;
-  }
 }
 
 @media (max-width: 640px) {
   .timeline-line {
-    display: none !important;
+    display: none;
   }
   
-  .timeline-icon,
-  .timeline-icon.startup,
-  .timeline-icon.corporate,
-  .timeline-icon.product {
-    display: none !important;
-  }
-  
-  .timeline-item {
-    display: block !important;
+  .timeline-icon {
+    display: none;
   }
   
   .timeline-content {
-    margin-left: 0 !important;
-    width: 100% !important;
-    max-width: none !important;
-    margin-right: 0 !important;
-    padding: 0 !important;
+    margin-left: 0;
   }
   
   .timeline-card {
-    padding: 1.25rem !important;
-    width: 100% !important;
+    padding: 1.5rem;
   }
 }

@@ -48,7 +48,7 @@ export default function Experience() {
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
                   
-                  <div className="timeline-content">
+                  <div className={`timeline-content-${isEven ? 'left' : 'right'}`}>
                     <div className="timeline-card">
                       <div className="experience-period">
                         {experience.period}
