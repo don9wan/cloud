@@ -6,10 +6,11 @@ import CoreCompetencies from "@/components/CoreCompetencies";
 import TechStack from "@/components/TechStack";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
-import Articles from "@/components/Articles";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { useScrollTrigger } from "@/hooks/useScrollTrigger";
+import Education from "../components/Education";
+import Awards from "../components/Awards";
 
 export default function Home() {
   useScrollTrigger();
@@ -32,7 +33,8 @@ export default function Home() {
         <TechStack />
         <Experience />
         <Projects />
-        <Articles />
+        <Education />
+        <Awards />
         <Contact />
       </main>
       

@@ -1,0 +1,203 @@
+/* Education Component Styles */
+.education-section {
+  background: var(--bg-primary);
+}
+
+.education-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  font-family: var(--font-display);
+  text-align: center;
+}
+
+.education-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  max-width: 48rem;
+  margin: 0 auto 5rem;
+  text-align: center;
+}
+
+.education-timeline-container {
+  position: relative;
+}
+
+.education-timeline-line {
+  position: absolute;
+  left: 2rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #065F46, #10B981);
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: transform 1.5s ease-out;
+}
+
+.education-timeline-line.animate {
+  transform: scaleY(1);
+}
+
+.education-timeline-items {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.education-timeline-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.education-timeline-icon {
+  flex-shrink: 0;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.education-timeline-icon.university {
+  background: linear-gradient(135deg, #065F46, #10B981);
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.education-timeline-icon.highschool {
+  background: linear-gradient(135deg, #1E40AF, #3B82F6);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.education-timeline-content {
+  margin-left: 2rem;
+  flex: 1;
+}
+
+.education-timeline-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.education-timeline-card:hover {
+  background: var(--glass-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.education-period {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  background: rgba(16, 185, 129, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  display: inline-block;
+}
+
+.education-degree {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.education-school {
+  color: var(--primary);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.education-summary {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.education-courses {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.education-courses li {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+  line-height: 1.5;
+}
+
+.education-courses li::before {
+  content: "📚";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+@media (min-width: 1024px) {
+  .education-timeline-line {
+    left: 50%;
+    transform: translateX(-50%) scaleY(0);
+    transform-origin: top;
+  }
+  
+  .education-timeline-line.animate {
+    transform: translateX(-50%) scaleY(1);
+  }
+  
+  .education-timeline-icon {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .education-timeline-content-left {
+    width: 45%;
+    margin-left: 0;
+    margin-right: auto;
+    padding-right: 0;
+  }
+  
+  .education-timeline-content-right {
+    width: 45%;
+    margin-left: auto;
+    margin-right: 0;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .education-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .education-timeline-line {
+    display: none;
+  }
+  
+  .education-timeline-icon {
+    display: none;
+  }
+  
+  .education-timeline-content {
+    margin-left: 0;
+  }
+  
+  .education-timeline-card {
+    padding: 1.5rem;
+  }
+}

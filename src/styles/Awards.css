@@ -1,0 +1,191 @@
+/* Awards Component Styles */
+.awards-section {
+  background: var(--bg-primary);
+}
+
+.awards-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  font-family: var(--font-display);
+  text-align: center;
+}
+
+.awards-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  max-width: 48rem;
+  margin: 0 auto 5rem;
+  text-align: center;
+}
+
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.award-card {
+  border-radius: 1.5rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  position: relative;
+}
+
+.award-card:hover {
+  background: var(--glass-hover);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.award-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #F59E0B, #EAB308, #F59E0B);
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.award-content {
+  padding: 2rem;
+}
+
+.award-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.award-type {
+  background: linear-gradient(135deg, #F59E0B, #EAB308);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.award-period {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: rgba(245, 158, 11, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+}
+
+.award-icon-container {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.award-icon-container.government {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(234, 179, 8, 0.1));
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.award-icon-container.institution {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(37, 99, 235, 0.1));
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.award-icon-container.startup {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(5, 150, 105, 0.1));
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.award-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.award-icon.government {
+  color: #F59E0B;
+}
+
+.award-icon.institution {
+  color: #3B82F6;
+}
+
+.award-icon.startup {
+  color: #10B981;
+}
+
+.award-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.award-organization {
+  color: var(--primary);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.award-summary {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.award-description {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  font-style: italic;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.75rem;
+  border-left: 3px solid var(--primary);
+}
+
+.award-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: linear-gradient(135deg, #F59E0B, #EAB308);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+}
+
+@media (max-width: 768px) {
+  .awards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .awards-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .award-content {
+    padding: 1.5rem;
+  }
+  
+  .awards-grid {
+    gap: 1.5rem;
+  }
+}
