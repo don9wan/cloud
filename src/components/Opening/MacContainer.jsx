@@ -3,10 +3,11 @@ import { useFrame, useThree } from '@react-three/fiber';
 import React, { useRef, useEffect, useState } from 'react';
 import * as THREE from "three";
 
-const MacContainer = () => {
+const MacContainer = ({ onMacFullyOpened }) => {
     const { viewport } = useThree(); // 뷰포트 정보 가져오기
     const groupRef = useRef();
     const [isLoaded, setIsLoaded] = useState(false);
+    const [isMacFullyOpened, setIsMacFullyOpened] = useState(false);
     
     let model = useGLTF("./mac.glb");
     let meshes = {};
@@ -81,9 +82,27 @@ const MacContainer = () => {
 
     let data = useScroll();
     useFrame((state, delta) => {
-        // 화면 회전 애니메이션
+        // 스크롤 진행률 (0 = 맨 위, 1 = 맨 아래)
+        const scrollProgress = data.offset;
+        
+        // 맥북 열기/닫기 애니메이션 (스크롤 0~0.5 구간에서 진행)
+        const macOpenProgress = Math.min(scrollProgress * 2, 1); // 0~0.5 스크롤을 0~1로 매핑
+        
+        // 맥북이 완전히 열렸는지 체크 (90% 이상 열렸을 때)
+        const fullyOpened = macOpenProgress >= 0.9;
+        if (fullyOpened !== isMacFullyOpened) {
+            setIsMacFullyOpened(fullyOpened);
+            // 부모 컴포넌트에 상태 전달
+            if (onMacFullyOpened && typeof onMacFullyOpened === 'function') {
+                onMacFullyOpened(fullyOpened, scrollProgress);
+            }
+        }
+        
+        // 화면 회전 애니메이션 (맥북이 열리는 효과)
         if (meshes.screen && meshes.screen.rotation) {
-            meshes.screen.rotation.x = THREE.MathUtils.degToRad(180 - (data.offset * 90));
+            // 180도(완전히 접힌 상태)에서 90도(완전히 열린 상태)로 변화
+            const rotationAngle = 180 - (macOpenProgress * 90);
+            meshes.screen.rotation.x = THREE.MathUtils.degToRad(rotationAngle);
         }
         
         // Fade-in 애니메이션 (완료되지 않았을 때만 실행)
