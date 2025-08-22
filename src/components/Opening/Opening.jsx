@@ -10,7 +10,8 @@ const Opening = () => {
     <div className="opening-container">
       <Canvas camera={{ fov: 12, position: [1, -10, 220] }}>
         <OrbitControls />
-        <Environment files={"https://dl.polyhaven.org/file/ph-assets/HDRIs/exr/4k/studio_small_09_4k.exr"} />
+        {/* 2K HDRI로 화질과 성능의 균형점 */}
+        <Environment files={"https://dl.polyhaven.org/file/ph-assets/HDRIs/exr/2k/studio_small_09_2k.exr"} />
         <ScrollControls pages={3} >
           <MacContainer />
         </ScrollControls>
