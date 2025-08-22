@@ -8,6 +8,7 @@ const MacContainer = ({ onMacFullyOpened }) => {
     const groupRef = useRef();
     const [isLoaded, setIsLoaded] = useState(false);
     const [isMacFullyOpened, setIsMacFullyOpened] = useState(false);
+    const [isFadeComplete, setIsFadeComplete] = useState(false);
     
     let model = useGLTF("./mac.glb");
     let meshes = {};
@@ -135,6 +136,15 @@ const MacContainer = ({ onMacFullyOpened }) => {
                             child.material.transparent = false;
                         }
                     });
+                    
+                    // 페이드인 애니메이션 완료를 부모에게 알림 (한 번만)
+                    if (!isFadeComplete) {
+                        setIsFadeComplete(true);
+                        if (onMacFullyOpened) {
+                            // 페이드인 완료를 알리기 위해 특별한 시그널 전송
+                            onMacFullyOpened(false, -1); // -1은 애니메이션 완료 시그널
+                        }
+                    }
                 }
             }
         }
