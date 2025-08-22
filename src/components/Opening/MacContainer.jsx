@@ -17,28 +17,22 @@ const MacContainer = ({ onMacFullyOpened }) => {
     // 애니메이션을 위한 상태값
     const fadeProgress = useRef(0);
     
-    // 반응형 스케일 계산 (브라우저 창 크기 기준)
+    // 반응형 스케일 계산 (브라우저 창 크기 기준) - 페이드인 애니메이션용
     const getResponsiveScale = () => {
         // 실제 브라우저 창 크기 확인
         const windowWidth = typeof window !== 'undefined' ? window.innerWidth : 1024;
         const windowHeight = typeof window !== 'undefined' ? window.innerHeight : 768;
         
-        console.log('Window Size:', windowWidth, 'x', windowHeight);
-        console.log('Viewport Size:', viewport.width.toFixed(2), 'x', viewport.height.toFixed(2));
-        
         const isMobile = windowWidth < 768;
         const isTablet = windowWidth >= 768 && windowWidth < 1024;
         
         if (isMobile) {
-            console.log('Mobile detected - applying mobile scale');
-            return 0.5; // 모바일에서 90% 크기
+            return 0.5; // 모바일에서 50% 크기
         } else if (isTablet) {
-            console.log('Tablet detected - applying tablet scale');
             return 0.85; // 태블릿에서 85% 크기
         }
         
-        console.log('Desktop detected - applying desktop scale');
-        return 1.2;
+        return 1.2; // 데스크톱에서 120% 크기
     };
     
     // Traverse all children
@@ -62,7 +56,6 @@ const MacContainer = ({ onMacFullyOpened }) => {
         // 초기 상태를 애니메이션 시작 상태로 설정
         if (groupRef.current) {
             const baseScale = getResponsiveScale();
-            console.log('Initial scale set to:', baseScale);
             
             // 초기에는 투명하고 작은 상태로 설정
             groupRef.current.traverse((child) => {
@@ -72,6 +65,10 @@ const MacContainer = ({ onMacFullyOpened }) => {
                 }
             });
             groupRef.current.scale.setScalar(baseScale * 0.9); // 반응형 크기의 90%로 시작
+            
+            // 초기 회전 설정 - 좌측 45도, 아래면 10도
+            groupRef.current.rotation.y = THREE.MathUtils.degToRad(-45); // 좌측으로 45도 회전
+            groupRef.current.rotation.x = THREE.MathUtils.degToRad(-10); // 아래면이 보이도록 10도 회전
         }
         
         const timer = setTimeout(() => {
@@ -105,6 +102,17 @@ const MacContainer = ({ onMacFullyOpened }) => {
             const rotationAngle = 180 - (macOpenProgress * 90);
             meshes.screen.rotation.x = THREE.MathUtils.degToRad(rotationAngle);
         }
+
+        // 맥북 전체 회전 애니메이션 (좌측+아래면 -> 정면)
+        if (groupRef.current) {
+            // Y축: 초기 -45도에서 0도로 점진적 변화 (좌측 -> 정면)
+            const yRotationAngle = -45 + (macOpenProgress * 45);
+            groupRef.current.rotation.y = THREE.MathUtils.degToRad(yRotationAngle);
+            
+            // X축: 초기 -10도에서 0도로 점진적 변화 (아래면 -> 정면)
+            const xRotationAngle = -10 + (macOpenProgress * 10);
+            groupRef.current.rotation.x = THREE.MathUtils.degToRad(xRotationAngle);
+        }
         
         // Fade-in 애니메이션 (완료되지 않았을 때만 실행)
         if (isLoaded && fadeProgress.current < 1) {
@@ -122,7 +130,7 @@ const MacContainer = ({ onMacFullyOpened }) => {
                     }
                 });
                 
-                // 반응형 스케일 애니메이션
+                // 페이드인 스케일 애니메이션 (작은 크기에서 정상 크기로)
                 const scale = THREE.MathUtils.lerp(baseScale * 0.9, baseScale, 
                     THREE.MathUtils.smoothstep(fadeProgress.current, 0, 1));
                 groupRef.current.scale.setScalar(scale);
@@ -148,12 +156,6 @@ const MacContainer = ({ onMacFullyOpened }) => {
                 }
             }
         }
-        
-        // 화면 크기가 변경될 때 실시간으로 스케일 조정 (애니메이션 완료 후)
-        if (fadeProgress.current >= 1 && groupRef.current) {
-            const currentBaseScale = getResponsiveScale();
-            groupRef.current.scale.setScalar(currentBaseScale);
-        }
     });
 
     // 반응형 위치 계산 (브라우저 창 크기 기준)
@@ -163,9 +165,9 @@ const MacContainer = ({ onMacFullyOpened }) => {
         
         if (isMobile) {
             console.log('Mobile position applied');
-            return [0, -8, 10]; // 모바일에서 더 아래로 조정
+            return [0, -7, 10]; // 모바일에서 조금 아래로 (-5에서 -7로)
         }
-        return [0, -14, 20]; // 데스크톱에서도 더 아래로 조정
+        return [0, -12, 20]; // 데스크톱에서도 조금 아래로 (-10에서 -12로)
     };
 
     return (
