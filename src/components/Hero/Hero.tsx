@@ -74,7 +74,7 @@ export default function Hero() {
           <div className="hero-media scroll-trigger stagger-3">
             <div>
               <img
-                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&h=1200"
+                src="/images/profile-image.jpg"
                 alt="Professional workspace with modern setup"
                 className="hero-image"
               />
