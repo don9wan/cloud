@@ -11,6 +11,7 @@ const Opening = () => {
   const [isAnimationComplete, setIsAnimationComplete] = useState(false);
   const [isTextFadingOut, setIsTextFadingOut] = useState(false); // 텍스트 페이드아웃 중인지
   const [showText, setShowText] = useState(true); // 텍스트를 보여줄지 여부
+  const [isTextAnimationComplete, setIsTextAnimationComplete] = useState(false); // 가이드라인 텍스트 애니메이션 완료
   
   const handleMacFullyOpened = (isOpened, scrollProgress) => {
     // 페이드인 애니메이션 완료 시그널 처리
@@ -48,17 +49,33 @@ const Opening = () => {
     }
   };
   
-  // 맥북 애니메이션 중에는 전체 페이지 스크롤 차단
+  // 가이드라인 텍스트 페이드인 애니메이션 완료 감지
+  useEffect(() => {
+    if (showText) {
+      // CSS 애니메이션이 완료되는 시점을 감지 (일반적으로 페이드인 애니메이션은 1-2초)
+      const timer = setTimeout(() => {
+        setIsTextAnimationComplete(true);
+      }, 2000); // 텍스트 페이드인 애니메이션 완료 시간
+      
+      return () => clearTimeout(timer);
+    }
+  }, [showText]);
+  
+    // 맥북 렌더링 + 가이드라인 텍스트 애니메이션 모두 완료되면 스크롤 차단 해제
   useEffect(() => {
     const preventScroll = (e) => {
-      if (!isAnimationComplete) {
+      // 맥북 렌더링과 텍스트 애니메이션 모두 완료되지 않았으면 스크롤 차단
+      const bothCompleted = isAnimationComplete && isTextAnimationComplete;
+      if (!bothCompleted) {
         e.preventDefault();
         e.stopPropagation();
         return false;
       }
     };
     
-    if (!isAnimationComplete) {
+    const bothCompleted = isAnimationComplete && isTextAnimationComplete;
+    
+    if (!bothCompleted) {
       // 모든 스크롤 이벤트 차단
       document.body.style.overflow = 'hidden';
       window.addEventListener('wheel', preventScroll, { passive: false });
@@ -72,7 +89,7 @@ const Opening = () => {
         }
       });
     } else {
-      // 애니메이션 완료 후 스크롤 복원
+      // 맥북 렌더링 + 텍스트 애니메이션 모두 완료 후 스크롤 복원
       document.body.style.overflow = 'auto';
     }
     
@@ -82,7 +99,7 @@ const Opening = () => {
       window.removeEventListener('scroll', preventScroll);
       window.removeEventListener('touchmove', preventScroll);
     };
-  }, [isAnimationComplete]);
+  }, [isAnimationComplete, isTextAnimationComplete]);
   
   useEffect(() => {
     const handleWheel = (e) => {
