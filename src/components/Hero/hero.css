@@ -11,6 +11,13 @@
     var(--bg-primary) 100%);
 }
 
+/* 모바일/태블릿에서는 Navigation 높이만큼 추가 패딩 */
+@media (max-width: 1023px) {
+  .hero-section {
+    padding-top: 6rem; /* Navigation(4rem) + 여유공간(2rem) */
+  }
+}
+
 .hero-grid {
   display: grid;
   gap: 3rem;

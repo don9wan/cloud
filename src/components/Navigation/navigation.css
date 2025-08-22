@@ -13,6 +13,15 @@
   opacity: 0;
 }
 
+/* 모바일/태블릿에서는 처음부터 보이도록 */
+@media (max-width: 1023px) {
+  .navbar {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+    background: var(--glass-bg-solid);
+  }
+}
+
 /* 스크롤 시 나타나는 애니메이션 */
 .navbar-visible {
   transform: translateY(0);
