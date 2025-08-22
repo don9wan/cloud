@@ -1,0 +1,51 @@
+/* Scoped styles for Opening component only */
+.opening-container {
+    background-color: black !important;
+    position: relative;
+    z-index: 0; /* Lower z-index than other sections */
+}
+
+.opening-container .masked {
+    position: relative;
+    background: url("https://i.pinimg.com/564x/d9/54/87/d95487ffab31b9722b12eaf0e5709494.jpg") no-repeat center center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: cover;
+}
+
+.opening-container .masked::before {
+    content: "mackbook pro.";
+    position: absolute;
+    top: 0;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: url("https://i.pinimg.com/564x/d9/54/87/d95487ffab31b9722b12eaf0e5709494.jpg") no-repeat center center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; 
+    background-size: cover;
+    filter: blur(40px);
+    opacity: 0.8;
+} 
+
+.opening-container .masked::after {
+    content: "mackbook pro.";
+    position: absolute;
+    top: 0;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: url("https://i.pinimg.com/564x/d9/54/87/d95487ffab31b9722b12eaf0e5709494.jpg") no-repeat center center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; 
+    background-size: cover;
+    filter: blur(20px);
+    opacity: 0.8;
+} 
+
+.opening-container .line {
+    border-bottom: 1px solid #333;
+}

@@ -10,6 +10,7 @@ import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
 import { useScrollTrigger } from "../hooks/useScrollTrigger";
 import Education from "../components/Education/Education";
+import Opening from "../components/Opening/Opening";
 
 export default function Home() {
   useScrollTrigger();
@@ -26,6 +27,7 @@ export default function Home() {
       <Navigation />
       
       <main>
+        <Opening />
         <Hero />
         <SearchBar />
         <CoreCompetencies />
