@@ -11,7 +11,7 @@ const MacContainer = ({ onMacFullyOpened }) => {
     
     let model = useGLTF("./mac.glb");
     let meshes = {};
-    let tex = useTexture("./red.jpg");
+    let tex = useTexture("./mac-background.jpg");
     
     // 애니메이션을 위한 상태값
     const fadeProgress = useRef(0);

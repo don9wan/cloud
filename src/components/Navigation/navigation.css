@@ -9,6 +9,19 @@
   backdrop-filter: blur(80px);
   border-bottom: 1px solid var(--glass-border);
   transition: all 0.3s ease;
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+/* 스크롤 시 나타나는 애니메이션 */
+.navbar-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.navbar-hidden {
+  transform: translateY(-100%);
+  opacity: 0;
 }
 
 .navbar.scrolled {

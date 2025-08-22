@@ -48,16 +48,10 @@ export const awardsData = [
         title: "TU-StartUp 성과공유 경진대회",
     },
     {
-        period: "2025-07",
+        period: "2025-08",
         publisher: "과학기술정보통신부",
         awards: "자격인정",
         title: "한이음드림업 우수 ICT프로젝트 선정",
-    },
-    {
-        period: "2025-08",
-        publisher: "미래에셋증권",
-        awards: "결선",
-        title: "미래에셋증권 AI페스티벌 서비스 공모전",
     },
     {
         period: "2025-09",

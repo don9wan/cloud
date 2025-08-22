@@ -1,10 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Moon, Sun, Menu, Download, Mail } from "lucide-react";
 import { useTheme } from "../../hooks/useTheme";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const { theme, setTheme } = useTheme();
+
+  // 스크롤 위치에 따라 네비게이션 표시/숨김
+  useEffect(() => {
+    const handleScroll = () => {
+      // Opening 컴포넌트의 높이를 기준으로 판단 (대략 100vh)
+      const scrollY = window.scrollY;
+      const viewportHeight = window.innerHeight;
+      
+      // Opening 컴포넌트를 지나면 네비게이션 표시
+      setIsVisible(scrollY > viewportHeight * 0.8);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // 초기 상태 체크
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
@@ -41,7 +59,7 @@ export default function Navigation() {
   };
 
   return (
-    <nav id="navbar" className="navbar">
+    <nav id="navbar" className={`navbar ${isVisible ? 'navbar-visible' : 'navbar-hidden'}`}>
       <div className="container-custom">
         <div className="navbar-container">
           {/* Logo */}

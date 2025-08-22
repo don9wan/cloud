@@ -1,6 +1,7 @@
 import { ArrowRight, Download } from "lucide-react";
 import { profileData } from "../../data/profile";
 import { useScrollTrigger } from "../../hooks/useScrollTrigger";
+import "./hero.css";
 
 export default function Hero() {
   // Initialize scroll trigger for animations
