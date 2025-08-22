@@ -1,9 +1,10 @@
 import { useGLTF, useScroll, useTexture } from '@react-three/drei';
-import { useFrame } from '@react-three/fiber';
+import { useFrame, useThree } from '@react-three/fiber';
 import React, { useRef, useEffect, useState } from 'react';
 import * as THREE from "three";
 
 const MacContainer = () => {
+    const { viewport } = useThree(); // 뷰포트 정보 가져오기
     const groupRef = useRef();
     const [isLoaded, setIsLoaded] = useState(false);
     
@@ -13,6 +14,30 @@ const MacContainer = () => {
     
     // 애니메이션을 위한 상태값
     const fadeProgress = useRef(0);
+    
+    // 반응형 스케일 계산 (브라우저 창 크기 기준)
+    const getResponsiveScale = () => {
+        // 실제 브라우저 창 크기 확인
+        const windowWidth = typeof window !== 'undefined' ? window.innerWidth : 1024;
+        const windowHeight = typeof window !== 'undefined' ? window.innerHeight : 768;
+        
+        console.log('Window Size:', windowWidth, 'x', windowHeight);
+        console.log('Viewport Size:', viewport.width.toFixed(2), 'x', viewport.height.toFixed(2));
+        
+        const isMobile = windowWidth < 768;
+        const isTablet = windowWidth >= 768 && windowWidth < 1024;
+        
+        if (isMobile) {
+            console.log('Mobile detected - applying mobile scale');
+            return 0.5; // 모바일에서 90% 크기
+        } else if (isTablet) {
+            console.log('Tablet detected - applying tablet scale');
+            return 0.85; // 태블릿에서 85% 크기
+        }
+        
+        console.log('Desktop detected - applying desktop scale');
+        return 1.2;
+    };
     
     // Traverse all children
     model.scene.traverse((e) => {
@@ -34,6 +59,9 @@ const MacContainer = () => {
     useEffect(() => {
         // 초기 상태를 애니메이션 시작 상태로 설정
         if (groupRef.current) {
+            const baseScale = getResponsiveScale();
+            console.log('Initial scale set to:', baseScale);
+            
             // 초기에는 투명하고 작은 상태로 설정
             groupRef.current.traverse((child) => {
                 if (child.material) {
@@ -41,7 +69,7 @@ const MacContainer = () => {
                     child.material.opacity = 0; // 투명한 상태로 시작
                 }
             });
-            groupRef.current.scale.setScalar(0.9); // 작은 크기로 시작
+            groupRef.current.scale.setScalar(baseScale * 0.9); // 반응형 크기의 90%로 시작
         }
         
         const timer = setTimeout(() => {
@@ -49,7 +77,7 @@ const MacContainer = () => {
         }, 100); // 약간의 지연 후 애니메이션 시작
         
         return () => clearTimeout(timer);
-    }, []);
+    }, []); // window resize 이벤트는 별도로 처리
 
     let data = useScroll();
     useFrame((state, delta) => {
@@ -64,6 +92,8 @@ const MacContainer = () => {
             fadeProgress.current = Math.min(fadeProgress.current, 1);
             
             if (groupRef.current) {
+                const baseScale = getResponsiveScale();
+                
                 // 투명도 애니메이션
                 groupRef.current.traverse((child) => {
                     if (child.material) {
@@ -72,8 +102,8 @@ const MacContainer = () => {
                     }
                 });
                 
-                // 스케일 애니메이션
-                const scale = THREE.MathUtils.lerp(0.9, 1, 
+                // 반응형 스케일 애니메이션
+                const scale = THREE.MathUtils.lerp(baseScale * 0.9, baseScale, 
                     THREE.MathUtils.smoothstep(fadeProgress.current, 0, 1));
                 groupRef.current.scale.setScalar(scale);
                 
@@ -89,10 +119,28 @@ const MacContainer = () => {
                 }
             }
         }
+        
+        // 화면 크기가 변경될 때 실시간으로 스케일 조정 (애니메이션 완료 후)
+        if (fadeProgress.current >= 1 && groupRef.current) {
+            const currentBaseScale = getResponsiveScale();
+            groupRef.current.scale.setScalar(currentBaseScale);
+        }
     });
 
+    // 반응형 위치 계산 (브라우저 창 크기 기준)
+    const getResponsivePosition = () => {
+        const windowWidth = typeof window !== 'undefined' ? window.innerWidth : 1024;
+        const isMobile = windowWidth < 768;
+        
+        if (isMobile) {
+            console.log('Mobile position applied');
+            return [0, -8, 10]; // 모바일에서 더 아래로 조정
+        }
+        return [0, -14, 20]; // 데스크톱에서도 더 아래로 조정
+    };
+
     return (
-        <group ref={groupRef} position={[0, -10, 20]}>
+        <group ref={groupRef} position={getResponsivePosition()}>
             <primitive object={model.scene} />
         </group>
     );
