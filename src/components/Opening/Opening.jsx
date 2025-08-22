@@ -9,12 +9,25 @@ const Opening = () => {
   const containerRef = useRef();
   const [isMacFullyOpened, setIsMacFullyOpened] = useState(false);
   const [isAnimationComplete, setIsAnimationComplete] = useState(false);
+  const [isTextFadingOut, setIsTextFadingOut] = useState(false); // 텍스트 페이드아웃 중인지
+  const [showText, setShowText] = useState(true); // 텍스트를 보여줄지 여부
   
   const handleMacFullyOpened = (isOpened, scrollProgress) => {
     // 페이드인 애니메이션 완료 시그널 처리
     if (scrollProgress === -1) {
       setIsAnimationComplete(true);
       return;
+    }
+    
+    // 텍스트 숨기기 전용 신호 처리 (다른 로직에는 영향 없음)
+    if (isOpened === 'hideText' && showText && !isTextFadingOut) {
+      console.log('Mac is starting to open, hiding text');
+      setIsTextFadingOut(true);
+      setTimeout(() => {
+        setShowText(false);
+        setIsTextFadingOut(false);
+      }, 1000);
+      return; // 여기서 리턴하여 다른 로직 실행 방지
     }
     
     setIsMacFullyOpened(isOpened);
@@ -101,11 +114,21 @@ const Opening = () => {
 
   return (
     <div ref={containerRef} className="opening-container">
+      {/* 가이드 텍스트 - 스크롤 시작하면 페이드아웃 애니메이션 */}
+      {showText && (
+        <div className={`guide-text-container ${isTextFadingOut ? 'fade-out' : ''}`}>
+          <h1 className="guide-text">
+            환영합니다.<br />
+            스크롤을 내려 탐색해보세요!
+          </h1>
+        </div>
+      )}
+      
       <Canvas 
         camera={{ fov: 12, position: [1, -10, 220] }}
         style={{ pointerEvents: isMacFullyOpened ? 'none' : 'auto' }}
       >
-        <OrbitControls enableZoom={false} enablePan={false} />
+        <OrbitControls enableZoom={false} enablePan={false} enableRotate={false} />
         {/* 2K HDRI로 화질과 성능의 균형점 */}
         <Environment files={"https://dl.polyhaven.org/file/ph-assets/HDRIs/exr/2k/studio_small_09_2k.exr"} />
         <ScrollControls 

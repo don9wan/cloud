@@ -9,6 +9,7 @@ const MacContainer = ({ onMacFullyOpened }) => {
     const [isLoaded, setIsLoaded] = useState(false);
     const [isMacFullyOpened, setIsMacFullyOpened] = useState(false);
     const [isFadeComplete, setIsFadeComplete] = useState(false);
+    const [hasHiddenText, setHasHiddenText] = useState(false); // 텍스트 숨김 신호를 한 번만 보내기 위함
     
     let model = useGLTF("./mac.glb");
     let meshes = {};
@@ -82,6 +83,13 @@ const MacContainer = ({ onMacFullyOpened }) => {
     useFrame((state, delta) => {
         // 스크롤 진행률 (0 = 맨 위, 1 = 맨 아래)
         const scrollProgress = data.offset;
+        
+        // 맥북이 조금이라도 펴지기 시작하는 순간 감지 (한 번만 실행)
+        if (scrollProgress > 0 && !hasHiddenText && onMacFullyOpened && typeof onMacFullyOpened === 'function') {
+            // 텍스트 숨기기 전용 신호를 부모에게 전달
+            onMacFullyOpened('hideText', scrollProgress);
+            setHasHiddenText(true); // 한 번만 실행되도록 플래그 설정
+        }
         
         // 맥북 열기/닫기 애니메이션 (스크롤 0~0.5 구간에서 진행)
         const macOpenProgress = Math.min(scrollProgress * 2, 1); // 0~0.5 스크롤을 0~1로 매핑

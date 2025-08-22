@@ -7,6 +7,121 @@
   z-index: 0; /* Lower z-index to not interfere with other sections */
 }
 
+/* 가이드 텍스트 스타일 - 맥북보다 뒤쪽에 배치 */
+.guide-text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1; /* 맥북(z-index: 10)보다 뒤에 위치 */
+  text-align: center;
+  opacity: 0; /* 초기에는 투명하게 */
+  animation: guideFadeIn 1.2s ease-out 1.5s forwards; /* 2초 딜레이 후 등장 */
+  width: 90%; /* 모바일에서 여백 확보 */
+  max-width: 600px; /* 최대 너비 제한 */
+  padding: 0 20px; /* 양쪽 패딩 추가 */
+}
+
+.guide-text-container.fade-out {
+  animation: guideFadeOut 0.5s ease-out forwards;
+}
+
+.guide-text {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: white;
+  text-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
+  margin: 0;
+  line-height: 1.4;
+  word-wrap: break-word; /* 긴 단어 줄바꿈 */
+  word-break: keep-all; /* 한국어 단어 유지 */
+  white-space: pre-line; /* 줄바꿈 허용 */
+  animation: 
+    floatAnimation 3s ease-in-out infinite,
+    sparkleAnimation 2s ease-in-out infinite alternate;
+}
+
+/* 서서히 밝아지는 애니메이션 */
+@keyframes guideFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 서서히 사라지는 애니메이션 */
+@keyframes guideFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* 둥실둥실 떠있는 효과 */
+@keyframes floatAnimation {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* 반짝거리는 효과 */
+@keyframes sparkleAnimation {
+  0% {
+    text-shadow: 
+      0 4px 20px rgba(255, 255, 255, 0.3),
+      0 0 10px rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    text-shadow: 
+      0 4px 25px rgba(255, 255, 255, 0.5),
+      0 0 20px rgba(255, 255, 255, 0.4),
+      0 0 30px rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* 반응형 텍스트 크기 */
+@media (max-width: 768px) {
+  .guide-text-container {
+    width: 95%; /* 모바일에서 더 넓게 */
+    padding: 0 15px; /* 패딩 줄임 */
+  }
+  
+  .guide-text {
+    font-size: 1.8rem; /* 폰트 크기 약간 증가 */
+    line-height: 1.3; /* 줄 간격 줄임 */
+  }
+}
+
+@media (max-width: 480px) {
+  .guide-text-container {
+    width: 90%; /* 작은 모바일에서도 충분히 넓게 */
+    padding: 0 10px; /* 최소 패딩 */
+  }
+  
+  .guide-text {
+    font-size: 1.5rem; /* 적절한 크기 유지 */
+    line-height: 1.2; /* 더 촘촘한 줄 간격 */
+  }
+}
+
+@media (max-width: 360px) {
+  .guide-text-container {
+    width: 95%;
+    padding: 0 5px; /* 매우 작은 패딩 */
+  }
+  
+  .guide-text {
+    font-size: 1.3rem; /* 더 작은 화면용 크기 */
+  }
+}
+
 .opening-navbar {
   display: flex;
   align-items: center;
