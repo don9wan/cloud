@@ -44,14 +44,15 @@ export default function Hero() {
                   );
                 } else {
                   return (
-                    <button
+                    <a
                       key={index}
-                      onClick={() => alert('이력서 준비 중입니다.')}
+                      href={cta.href}
+                      download="김동완_이력서.pdf"
                       className="btn btn-ghost"
                     >
                       {cta.label}
                       <Download className="btn-icon" />
-                    </button>
+                    </a>
                   );
                 }
               })}

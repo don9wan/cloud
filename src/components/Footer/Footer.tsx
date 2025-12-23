@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container-custom">
         <p className="footer-text">
-          © 2024 don9wan. All rights reserved.
+          © 2026 don9wan. All rights reserved.
         </p>
       </div>
     </footer>

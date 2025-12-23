@@ -1,5 +1,5 @@
 export const contactData = {
-  email: "pm.don9wan@tukorea.ac.kr",
+  email: "pm.don9wan@gmail.com",
   message: "새로운 프로젝트나 협업 기회에 대해 이야기하고 싶으시다면 언제든지 연락해주세요.",
   calendar: "https://calendly.com/kimdo",
   social: {

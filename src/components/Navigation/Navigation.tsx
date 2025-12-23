@@ -32,7 +32,7 @@ export default function Navigation() {
     { href: "#intro", label: "소개" },
     { href: "#skills", label: "역량" },
     { href: "#stack", label: "스택" },
-    { href: "#experience", label: "경력" },
+    { href: "#experience", label: "걸어온 길" },
     { href: "#projects", label: "프로젝트" },
     { href: "#education", label: "교육 및 실적" },
     { href: "#contact", label: "연락" },
@@ -102,13 +102,14 @@ export default function Navigation() {
             */}
 
             <div className="hidden lg:flex navbar-actions">
-              <button
-                onClick={() => alert('이력서 준비 중입니다.')}
+              <a
+                href="/pdf/의사결정 비용을 낮추는 다영역 이해형 PM - 김동완 이력서.pdf"
+                download="김동완_이력서.pdf"
                 className="btn btn-ghost"
               >
                 <Download className="w-4 h-4" style={{ marginRight: '0.5rem' }} />
                 이력서
-              </button>
+              </a>
               <a 
                 href="mailto:pm.don9wan@tukorea.ac.kr" 
                 className="btn btn-primary"
@@ -141,13 +142,14 @@ export default function Navigation() {
               </a>
             ))}
             <div style={{ paddingTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              <button
-                onClick={() => alert('이력서 준비 중입니다.')}
+              <a
+                href="/pdf/의사결정 비용을 낮추는 다영역 이해형 PM - 김동완 이력서.pdf"
+                download="김동완_이력서.pdf"
                 className="btn btn-ghost"
               >
                 <Download className="w-4 h-4" style={{ marginRight: '0.5rem' }} />
                 이력서 다운로드
-              </button>
+              </a>
               <a 
                 href="mailto:pm.don9wan@tukorea.ac.kr" 
                 className="btn btn-primary"

@@ -35,13 +35,14 @@ export default function Contact() {
                 <Mail className="w-5 h-5" style={{ marginRight: '0.75rem' }} />
                 이메일 보내기
               </a>
-              <button
-                onClick={() => alert('준비 중입니다.')}
+              <a
+                href="/pdf/의사결정 비용을 낮추는 다영역 이해형 PM - 김동완 이력서.pdf"
+                download="김동완_이력서.pdf"
                 className="btn btn-ghost glass"
               >
                 <Download className="w-5 h-5" style={{ marginRight: '0.75rem' }} />
                 이력서 다운로드
-              </button>
+              </a>
             </div>
             {/* Social Links */}
             <div className="social-links scroll-trigger stagger-2">

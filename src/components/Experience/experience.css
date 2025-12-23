@@ -110,7 +110,7 @@
 }
 
 .experience-summary {
-  color: var(--text-muted);
+  color: var(--text-primary);
   margin-bottom: 1rem;
   line-height: 1.6;
 }

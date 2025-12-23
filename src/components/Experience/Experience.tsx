@@ -24,7 +24,7 @@ export default function Experience() {
       <div className="container-custom">
         <div className="scroll-trigger">
           <h2 className="experience-title">
-            경력사항
+            걸어온 길
           </h2>
           <p className="experience-subtitle">
             다양한 스타트업과 기업에서의 경험을 통해 성장해왔습니다
