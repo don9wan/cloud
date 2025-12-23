@@ -45,8 +45,6 @@ export default function Home() {
       <Navigation />
       
       <main>
-        {/* 1024px 이상에서만 Opening 컴포넌트 표시 */}
-        {isDesktop && <Opening />}
         <Hero />
         <SearchBar />
         <CoreCompetencies />
