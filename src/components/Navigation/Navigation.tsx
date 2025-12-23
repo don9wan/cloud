@@ -103,8 +103,8 @@ export default function Navigation() {
 
             <div className="hidden lg:flex navbar-actions">
               <a
-                href="/pdf/의사결정 비용을 낮추는 다영역 이해형 PM - 김동완 이력서.pdf"
-                download="김동완_이력서.pdf"
+                href="/pdf/don9wan_resume.pdf"
+                download="don9wan_resume.pdf"
                 className="btn btn-ghost"
               >
                 <Download className="w-4 h-4" style={{ marginRight: '0.5rem' }} />
@@ -143,8 +143,8 @@ export default function Navigation() {
             ))}
             <div style={{ paddingTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               <a
-                href="/pdf/의사결정 비용을 낮추는 다영역 이해형 PM - 김동완 이력서.pdf"
-                download="김동완_이력서.pdf"
+                href="/pdf/don9wan_resume.pdf"
+                download="don9wan_resume.pdf"
                 className="btn btn-ghost"
               >
                 <Download className="w-4 h-4" style={{ marginRight: '0.5rem' }} />

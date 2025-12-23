@@ -47,7 +47,7 @@ export default function Hero() {
                     <a
                       key={index}
                       href={cta.href}
-                      download="김동완_이력서.pdf"
+                      download="don9wan_resume.pdf"
                       className="btn btn-ghost"
                     >
                       {cta.label}

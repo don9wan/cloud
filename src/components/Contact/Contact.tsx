@@ -36,8 +36,8 @@ export default function Contact() {
                 이메일 보내기
               </a>
               <a
-                href="/pdf/의사결정 비용을 낮추는 다영역 이해형 PM - 김동완 이력서.pdf"
-                download="김동완_이력서.pdf"
+                href="/pdf/don9wan_resume.pdf"
+                download="don9wan_resume.pdf"
                 className="btn btn-ghost glass"
               >
                 <Download className="w-5 h-5" style={{ marginRight: '0.75rem' }} />
