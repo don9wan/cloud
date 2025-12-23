@@ -1,11 +1,12 @@
-import { Briefcase, Laptop, Rocket } from "lucide-react";
+import { Lightbulb, CodeXml, ShipWheel, BriefcaseBusiness } from "lucide-react";
 import { experienceData } from "../../data/experience";
 import { useScrollTrigger } from "../../hooks/useScrollTrigger";
 
 const iconMap = {
-  briefcase: Briefcase,
-  laptop: Laptop,
-  rocket: Rocket,
+  lightBulb: Lightbulb,
+  codeXml: CodeXml,
+  shipWheel: ShipWheel,
+  briefcaseBusiness: BriefcaseBusiness,
 };
 
 // Map colors to CSS classes

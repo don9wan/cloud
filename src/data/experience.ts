@@ -5,7 +5,7 @@ export const experienceData = [
     role: "아이디어 공모전을 즐기는 대학생",
     period: "2018.03 - 2020.12",
     type: "의무경찰 군복역",
-    icon: "briefcase",
+    icon: "lightBulb",
     color: "primary",
     summary: "새로운 아이디어 기획 과정을 즐겼습니다. 특히 ICT 기술과 앱 서비스를 혼합한 아이디어를 주로 구상하였습니다.",
     impacts: [
@@ -20,7 +20,7 @@ export const experienceData = [
     role: "Android Developer",
     period: "2021.01 - 2023.06",
     type: "TBU Inc",
-    icon: "laptop",
+    icon: "codeXml",
     color: "accent-cyan",
     summary: "내 아이디어를 실현하고 싶다는 생각으로, 군복학 직후 소프트웨어공학과 앱 개발을 공부했습니다. 1년의 시간을 보내고 Android 개발자로 초기 스타트업에 합류하여 시리즈 A 투자 유치 과정에 기여했습니다.",
     impacts: [
@@ -37,7 +37,7 @@ export const experienceData = [
     role: "Startup Founder",
     period: "2024.03 - 2025.12",
     type: "체리픽 창업팀",
-    icon: "rocket",
+    icon: "shipWheel",
     color: "accent-amber",
     summary: "구현이 아닌 비즈니스 임팩트를 창출하고 싶다는 생각으로, IT경영학과에 편입해 다양한 분야를 학습했습니다. 또한 직접 창업팀을 빌딩해 서비스를 개발-운영했습니다.",
     impacts: [
@@ -54,7 +54,7 @@ export const experienceData = [
     role: "Product Manager",
     period: "2026 -",
     type: "새회사",
-    icon: "rocket",
+    icon: "briefcaseBusiness",
     color: "accent-amber",
     summary: "창업 실패 경험을 통해 더 이상 '내'가 아닌 '고객'이 원하는 아이디어를 실현하고자 굳게 결심했습니다. 고객의 행동에서 드러나는 고충, 비즈니스 목표, 기술의 접점에서 최적의 솔루션을 제시하며, 이제는 '돈 버는 실적'을 쌓아 올리고 싶습니다.",
     impacts: [
