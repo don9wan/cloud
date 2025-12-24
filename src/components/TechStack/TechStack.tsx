@@ -1,34 +1,23 @@
 import { useState, useEffect } from "react";
 import { techStackData } from "../../data/skills";
 import { useScrollTrigger } from "../../hooks/useScrollTrigger";
-import { 
-  BarChart, 
-  Activity, 
-  PieChart, 
-  Figma, 
-  Palette, 
-  Trello, 
-  Calendar, 
-  KanbanSquare, 
-  Github, 
-  Terminal, 
-  Code, 
-  Database 
-} from "lucide-react";
+import * as ReactIcons from "react-icons/si";
+import * as DevIcons from "react-icons/di";
+import { IconType } from "react-icons";
+import "./techstack.css";
 
-const iconMap = {
-  "bar-chart": BarChart,
-  activity: Activity,
-  "pie-chart": PieChart,
-  figma: Figma,
-  palette: Palette,
-  trello: Trello,
-  calendar: Calendar,
-  "kanban-square": KanbanSquare,
-  github: Github,
-  terminal: Terminal,
-  code: Code,
-  database: Database,
+// Get icon component from React Icons
+const getIconComponent = (iconName: string): IconType => {
+  // Try Simple Icons first (Si prefix)
+  const SimpleIcon = (ReactIcons as any)[iconName];
+  if (SimpleIcon) return SimpleIcon;
+  
+  // Try DevIcons (Di prefix)
+  const DevIcon = (DevIcons as any)[iconName];
+  if (DevIcon) return DevIcon;
+  
+  // Fallback to a generic icon
+  return ReactIcons.SiCodersrank;
 };
 
 // Map colors to CSS classes
@@ -105,18 +94,24 @@ export default function TechStack() {
         {/* Tech Stack Grid */}
         <div className="techstack-grid">
           {filteredItems.map((item, index) => {
-            const IconComponent = iconMap[item.icon as keyof typeof iconMap];
+            const IconComponent = getIconComponent(item.icon);
             const iconClass = colorClassMap[item.color] || 'analytics';
             return (
               <div
                 key={`${activeCategory}-${item.category}-${item.name}-${index}`}
                 className={`techstack-item scroll-trigger stagger-${(index % 4) + 1}`}
               >
-                <div className={`techstack-icon ${iconClass}`}>
-                  <IconComponent className="w-6 h-6 text-white" />
-                </div>
                 <div className="techstack-name">
                   {item.name}
+                </div>
+                {/* Progress Bar */}
+                <div className="techstack-proficiency">
+                  <div className="proficiency-bar-container">
+                    <div 
+                      className={`proficiency-bar-fill ${iconClass}`}
+                      style={{ width: `${item.proficiency}%` }}
+                    />
+                  </div>
                 </div>
               </div>
             );

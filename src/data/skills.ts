@@ -51,34 +51,33 @@ export const skillsData = [
 ];
 
 export const techStackData = [
-
   // ********* Design ********* //
-  { name: "Figma", icon: "code", color: "accent-lime", category: TechCategory.DESIGN },
-  { name: "Adobe Illustrator", icon: "code", color: "accent-lime", category: TechCategory.DESIGN },
-  { name: "PPT Design", icon: "code", color: "accent-lime", category: TechCategory.DESIGN },
+  { name: "Figma", icon: "SiFigma", color: "accent-lime", category: TechCategory.DESIGN, proficiency: 70 },
+  { name: "Adobe Illustrator", icon: "SiAdobeillustrator", color: "accent-lime", category: TechCategory.DESIGN, proficiency: 60 },
+  { name: "PPT Design", icon: "SiMicrosoftpowerpoint", color: "accent-lime", category: TechCategory.DESIGN, proficiency: 80 },
 
   // ********* Analytics ********* //
-  { name: "SQL", icon: "code", color: "accent-lime", category: TechCategory.ANALYTICS },
-  { name: "Mysql", icon: "code", color: "accent-lime", category: TechCategory.ANALYTICS },
-  { name: "Python", icon: "terminal", color: "primary", category: TechCategory.ANALYTICS },
-  { name: "Jupyter Notebook", icon: "terminal", color: "primary", category: TechCategory.ANALYTICS },
-  { name: "Kibana", icon: "code", color: "accent-lime", category: TechCategory.ANALYTICS },
-  { name: "Google Analytics", icon: "code", color: "accent-lime", category: TechCategory.ANALYTICS },
+  { name: "SQL", icon: "SiMysql", color: "accent-lime", category: TechCategory.ANALYTICS, proficiency: 40 },
+  { name: "Mysql", icon: "SiMysql", color: "accent-lime", category: TechCategory.ANALYTICS, proficiency: 30 },
+  { name: "Python", icon: "SiPython", color: "primary", category: TechCategory.ANALYTICS, proficiency: 30 },
+  { name: "Jupyter Notebook", icon: "SiJupyter", color: "primary", category: TechCategory.ANALYTICS, proficiency: 50 },
+  { name: "Kibana", icon: "SiKibana", color: "accent-lime", category: TechCategory.ANALYTICS, proficiency: 40 },
+  { name: "Google Analytics", icon: "SiGoogleanalytics", color: "accent-lime", category: TechCategory.ANALYTICS, proficiency: 50 },
   
   // ********* Project Management ********* //
-  { name: "Jira", icon: "code", color: "accent-lime", category: TechCategory.PROJECT },
-  { name: "Confluence", icon: "code", color: "accent-lime", category: TechCategory.PROJECT },
-  { name: "Notion", icon: "code", color: "accent-lime", category: TechCategory.PROJECT },
-  { name: "Slack", icon: "code", color: "accent-lime", category: TechCategory.PROJECT },
+  { name: "Jira", icon: "SiJira", color: "accent-lime", category: TechCategory.PROJECT, proficiency: 70 },
+  { name: "Confluence", icon: "SiConfluence", color: "accent-lime", category: TechCategory.PROJECT, proficiency: 70 },
+  { name: "Notion", icon: "SiNotion", color: "accent-lime", category: TechCategory.PROJECT, proficiency: 80 },
+  { name: "Slack", icon: "SiSlack", color: "accent-lime", category: TechCategory.PROJECT, proficiency: 80 },
 
   // ********* Development ********* //
-  { name: "Android\nwith Kotlin", icon: "code", color: "accent-lime", category: TechCategory.DEVELOPMENT },
-  { name: "Flutter\nwith Dart", icon: "code", color: "accent-lime", category: TechCategory.DEVELOPMENT },
-  { name: "React\nwith TS", icon: "code", color: "accent-lime", category: TechCategory.DEVELOPMENT },
-  { name: "Spring Boot\nwith Java", icon: "code", color: "accent-lime", category: TechCategory.DEVELOPMENT },
-  { name: "MVVM Architecture", icon: "code", color: "accent-lime", category: TechCategory.DEVELOPMENT },
-  { name: "Git Flow", icon: "code", color: "accent-lime", category: TechCategory.DEVELOPMENT },
-  { name: "Github", icon: "code", color: "accent-lime", category: TechCategory.DEVELOPMENT },
-  { name: "Firebase", icon: "code", color: "accent-lime", category: TechCategory.DEVELOPMENT },
-  { name: "Open API", icon: "code", color: "accent-lime", category: TechCategory.DEVELOPMENT },
+  { name: "Android\nwith Kotlin", icon: "SiKotlin", color: "accent-lime", category: TechCategory.DEVELOPMENT, proficiency: 80 },
+  { name: "Flutter\nwith Dart", icon: "SiFlutter", color: "accent-lime", category: TechCategory.DEVELOPMENT, proficiency: 60 },
+  { name: "React\nwith TS", icon: "SiReact", color: "accent-lime", category: TechCategory.DEVELOPMENT, proficiency: 70 },
+  { name: "Spring Boot\nwith Java", icon: "SiSpringboot", color: "accent-lime", category: TechCategory.DEVELOPMENT, proficiency: 40 },
+  { name: "MVVM Architecture", icon: "DiGoogleCloudPlatform", color: "accent-lime", category: TechCategory.DEVELOPMENT, proficiency: 70 },
+  { name: "Git Flow", icon: "SiGit", color: "accent-lime", category: TechCategory.DEVELOPMENT, proficiency: 80 },
+  { name: "Github", icon: "SiGithub", color: "accent-lime", category: TechCategory.DEVELOPMENT, proficiency: 80 },
+  { name: "Firebase", icon: "SiFirebase", color: "accent-lime", category: TechCategory.DEVELOPMENT, proficiency: 60 },
+  { name: "Open API", icon: "SiSwagger", color: "accent-lime", category: TechCategory.DEVELOPMENT, proficiency: 40 },
 ];
