@@ -67,10 +67,10 @@ export default function TechStack() {
 
   const categories = [
     { id: "all", label: "전체" },
-    { id: "analytics", label: "분석 도구" },
-    { id: "design", label: "디자인" },
+    { id: "development", label: "SW 개발" },
+    { id: "design", label: "UX/UI 디자인" },
+    { id: "analytics", label: "데이터 분석·시각화" },
     { id: "project", label: "프로젝트 관리" },
-    { id: "development", label: "개발 도구" },
   ];
 
   const filteredItems = activeCategory === "all" 

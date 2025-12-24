@@ -1,122 +1,85 @@
 //@TODO(): 기술스택
+
+export enum TechCategory {
+  DEVELOPMENT = "development",
+  DESIGN = "design",
+  PROJECT = "project",
+  ANALYTICS = "analytics",
+}
+
 export const skillsData = [
   {
-    title: "제품 전략",
+    title: "사업 기획",
     icon: "target",
     color: "primary",
     bullets: [
       "시장 분석 및 경쟁사 리서치",
-      "제품 로드맵 설계",
-      "KPI 설정 및 성과 관리"
+      "사업계획서 작성 및 IR피칭",
+      "플랫폼 비즈니스 모델 설계"
     ]
   },
   {
-    title: "개발 협업",
+    title: "서비스 개발",
     icon: "bar-chart-3",
     color: "accent-cyan",
     bullets: [
-      "프론트/백엔드 프로세스 이해",
-      "애자일 프로세스 기반 협업",
-      "API 설계 및 문서화 지원"
+      "프론트엔드·백엔드 개발",
+      "아키텍쳐 패턴 기반 SW 설계",
+      "버그 모니터링 및 트러블슈팅"
     ]
   },
   {
-    title: "UX 리서치",
+    title: "서비스 디자인",
     icon: "users",
     color: "accent-amber",
     bullets: [
-      "사용자 인터뷰 및 리서치",
-      "UX/UI 디자인 협업",
-      "프로토타이핑 및 테스트"
+      "고객발굴 심층인터뷰",
+      "웹·앱 UX/UI 디자인",
+      "프로토타이핑 및 QA"
     ]
   },
   {
-    title: "데이터 기반 성장 전략",
+    title: "커뮤니케이션",
     icon: "bar-chart-3",
     color: "accent-cyan",
     bullets: [
-      "사용자 행동 데이터 분석",
-      "A/B 테스트 설계 및 분석",
-      "GA4 및 도구 활용"
+      "애자일 프로세스 기반 협업",
+      "API 설계 및 문서화",
+      "Jira Product Discovery",
+      
     ]
   }
 ];
 
 export const techStackData = [
-  // Analytics Tools
-  {
-    name: "Google Analytics",
-    icon: "bar-chart",
-    color: "primary",
-    category: "analytics"
-  },
-  {
-    name: "Mixpanel",
-    icon: "activity",
-    color: "accent-cyan",
-    category: "analytics"
-  },
-  {
-    name: "Amplitude",
-    icon: "pie-chart",
-    color: "accent-amber",
-    category: "analytics"
-  },
-  {
-    name: "Tableau",
-    icon: "database",
-    color: "accent-amber",
-    category: "analytics"
-  },
-  // Design Tools
-  {
-    name: "Figma",
-    icon: "figma",
-    color: "primary",
-    category: "design"
-  },
-  {
-    name: "Sketch",
-    icon: "palette",
-    color: "accent-cyan",
-    category: "design"
-  },
-  // Project Management
-  {
-    name: "Notion",
-    icon: "trello",
-    color: "accent-lime",
-    category: "project"
-  },
-  {
-    name: "Jira",
-    icon: "calendar",
-    color: "primary",
-    category: "project"
-  },
-  {
-    name: "Linear",
-    icon: "kanban-square",
-    color: "accent-amber",
-    category: "project"
-  },
-  // Development Tools
-  {
-    name: "GitHub",
-    icon: "github",
-    color: "accent-cyan",
-    category: "development"
-  },
-  {
-    name: "SQL",
-    icon: "terminal",
-    color: "primary",
-    category: "development"
-  },
-  {
-    name: "Python",
-    icon: "code",
-    color: "accent-lime",
-    category: "development"
-  }
+
+  // ********* Design ********* //
+  { name: "Figma", icon: "code", color: "accent-lime", category: TechCategory.DESIGN },
+  { name: "Adobe Illustrator", icon: "code", color: "accent-lime", category: TechCategory.DESIGN },
+  { name: "PPT Design", icon: "code", color: "accent-lime", category: TechCategory.DESIGN },
+
+  // ********* Analytics ********* //
+  { name: "SQL", icon: "code", color: "accent-lime", category: TechCategory.ANALYTICS },
+  { name: "Mysql", icon: "code", color: "accent-lime", category: TechCategory.ANALYTICS },
+  { name: "Python", icon: "terminal", color: "primary", category: TechCategory.ANALYTICS },
+  { name: "Jupyter Notebook", icon: "terminal", color: "primary", category: TechCategory.ANALYTICS },
+  { name: "Kibana", icon: "code", color: "accent-lime", category: TechCategory.ANALYTICS },
+  { name: "Google Analytics", icon: "code", color: "accent-lime", category: TechCategory.ANALYTICS },
+  
+  // ********* Project Management ********* //
+  { name: "Jira", icon: "code", color: "accent-lime", category: TechCategory.PROJECT },
+  { name: "Confluence", icon: "code", color: "accent-lime", category: TechCategory.PROJECT },
+  { name: "Notion", icon: "code", color: "accent-lime", category: TechCategory.PROJECT },
+  { name: "Slack", icon: "code", color: "accent-lime", category: TechCategory.PROJECT },
+
+  // ********* Development ********* //
+  { name: "Android\nwith Kotlin", icon: "code", color: "accent-lime", category: TechCategory.DEVELOPMENT },
+  { name: "Flutter\nwith Dart", icon: "code", color: "accent-lime", category: TechCategory.DEVELOPMENT },
+  { name: "React\nwith TS", icon: "code", color: "accent-lime", category: TechCategory.DEVELOPMENT },
+  { name: "Spring Boot\nwith Java", icon: "code", color: "accent-lime", category: TechCategory.DEVELOPMENT },
+  { name: "MVVM Architecture", icon: "code", color: "accent-lime", category: TechCategory.DEVELOPMENT },
+  { name: "Git Flow", icon: "code", color: "accent-lime", category: TechCategory.DEVELOPMENT },
+  { name: "Github", icon: "code", color: "accent-lime", category: TechCategory.DEVELOPMENT },
+  { name: "Firebase", icon: "code", color: "accent-lime", category: TechCategory.DEVELOPMENT },
+  { name: "Open API", icon: "code", color: "accent-lime", category: TechCategory.DEVELOPMENT },
 ];

@@ -124,6 +124,7 @@
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--text-primary);
+  white-space: pre-line;
 }
 
 @media (max-width: 767px) {
