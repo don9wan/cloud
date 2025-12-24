@@ -10,7 +10,7 @@ export enum TechCategory {
 export const skillsData = [
   {
     title: "사업 기획",
-    icon: "target",
+    icon: "briefcase-business",
     color: "primary",
     bullets: [
       "시장 분석 및 경쟁사 리서치",
@@ -20,7 +20,7 @@ export const skillsData = [
   },
   {
     title: "서비스 개발",
-    icon: "bar-chart-3",
+    icon: "code-xml",
     color: "accent-cyan",
     bullets: [
       "프론트엔드·백엔드 개발",
@@ -30,7 +30,7 @@ export const skillsData = [
   },
   {
     title: "서비스 디자인",
-    icon: "users",
+    icon: "monitor-smart-phone",
     color: "accent-amber",
     bullets: [
       "고객발굴 심층인터뷰",
@@ -39,14 +39,13 @@ export const skillsData = [
     ]
   },
   {
-    title: "커뮤니케이션",
-    icon: "bar-chart-3",
+    title: "팀 협업",
+    icon: "messages-square",
     color: "accent-cyan",
     bullets: [
-      "애자일 프로세스 기반 협업",
-      "API 설계 및 문서화",
-      "Jira Product Discovery",
-      
+      "요구사항 정의 및 우선순위 조정",
+      "서비스 정책 문서화 및 갱신",
+      "직군 간 커뮤니케이션 지원"
     ]
   }
 ];

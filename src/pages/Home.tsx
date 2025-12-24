@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Navigation from "../components/Navigation/Navigation";
 import Hero from "../components/Hero/Hero";
 import SearchBar from "../components/SearchBar/SearchBar";
-import CoreCompetencies from "../components/CoreCompetencies";
+import CoreCompetencies from "../components/TechStack/CoreCompetencies";
 import TechStack from "../components/TechStack/TechStack";
 import Experience from "../components/Experience/Experience";
 import Projects from "../components/Projects/Projects";

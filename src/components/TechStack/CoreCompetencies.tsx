@@ -1,12 +1,12 @@
-import { Target, BarChart3, Users, TrendingUp } from "lucide-react";
-import { skillsData } from "../data/skills";
-import { useScrollTrigger } from "../hooks/useScrollTrigger";
+import { BriefcaseBusiness, CodeXml, MonitorSmartphone, MessagesSquare } from "lucide-react";
+import { skillsData } from "../../data/skills";
+import { useScrollTrigger } from "../../hooks/useScrollTrigger";
 
 const iconMap = {
-  target: Target,
-  "bar-chart-3": BarChart3,
-  users: Users,
-  "trending-up": TrendingUp,
+  "briefcase-business": BriefcaseBusiness,
+  "code-xml": CodeXml,
+  "monitor-smart-phone": MonitorSmartphone,
+  "messages-square": MessagesSquare,
 };
 
 // Map colors to CSS classes
