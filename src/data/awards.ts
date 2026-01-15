@@ -80,7 +80,7 @@ export const awardsData = [
     {
         period: "2025-12",
         publisher: "한국공학대학교",
-        awards: "최우수상",
-        title: "2025 예산절감 아이디어 공모전",
+        awards: "우수상",
+        title: "2026 RISING-STAR AI제조 창업경진대회",
     },
 ];
