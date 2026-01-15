@@ -78,7 +78,7 @@ export const awardsData = [
         title: "2025 시흥시 지역사회 문제해결 경진대회",
     },
     {
-        period: "2025-12",
+        period: "2026-01",
         publisher: "한국공학대학교",
         awards: "우수상",
         title: "2026 RISING-STAR AI제조 창업경진대회",
