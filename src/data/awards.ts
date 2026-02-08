@@ -83,4 +83,10 @@ export const awardsData = [
         awards: "우수상",
         title: "2026 RISING-STAR AI제조 창업경진대회",
     },
+    {
+        period: "2026-01",
+        publisher: "한양대학교",
+        awards: "우수상",
+        title: "2026 한양대학교 진로 포트폴리오 경진대회",
+    },
 ];
