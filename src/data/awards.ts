@@ -27,7 +27,7 @@ export const awardsData = [
         period: "2024-07",
         publisher: "한국청년기업가정신재단",
         awards: "장려상",
-        title: "2024 대한민국 학생 창업주간 성과공유 대회",
+        title: "2024 대한민국 학생 창업주간",
     },
     {
         period: "2024-12",
