@@ -12,6 +12,12 @@
   text-align: center;
 }
 
+@media (min-width: 1024px) {
+  .articles-title {
+    font-size: 3.5rem;
+  }
+}
+
 .articles-subtitle {
   font-size: 1.25rem;
   color: var(--text-muted);

@@ -1,15 +1,21 @@
 /* Footer Styles */
 .footer {
-  padding: 2rem 0;
+  padding: 3rem 0;
   text-align: center;
-  border-top: 1px solid var(--glass-border);
-  margin-top: 4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--bg-primary);
+}
+
+html.light .footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .footer-text {
   color: var(--text-muted);
+  font-size: 0.9375rem;
+  letter-spacing: -0.01em;
 }
 
-body.light .footer-text {
+html.light .footer-text {
   color: var(--light-muted);
 }

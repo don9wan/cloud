@@ -1,15 +1,23 @@
 /* Core Competencies Component Styles */
 .competencies-section {
   background: var(--bg-primary);
+  padding: var(--section-padding) 0;
 }
 
 .competencies-title {
   font-size: 2.5rem;
-  font-weight: bold;
+  font-weight: 700;
+  letter-spacing: -0.04em;
   color: var(--text-primary);
   margin-bottom: 1.5rem;
   font-family: var(--font-display);
   text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .competencies-title {
+    font-size: 3.5rem;
+  }
 }
 
 .competencies-subtitle {
@@ -18,57 +26,78 @@
   max-width: 48rem;
   margin: 0 auto 5rem;
   text-align: center;
+  letter-spacing: -0.01em;
 }
 
 .competencies-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem;
 }
 
 .competency-card {
   background: var(--glass-bg);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid var(--glass-border);
-  border-radius: 1.5rem;
-  padding: 2rem;
-  transition: all 0.3s ease;
+  border-radius: 32px;
+  padding: 3rem;
+  transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+html.light .competency-card {
+  background: var(--glass-light-bg);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .competency-card:hover {
-  background: var(--glass-hover);
-  transform: scale(1.05);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+html.light .competency-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 .competency-icon {
   width: 4rem;
   height: 4rem;
-  border-radius: 1rem;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+html.light .competency-icon {
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .competency-icon.strategy {
-  background-color: #3B82F6;
+  background-color: #0071e3;
 }
 
 .competency-icon.analytics {
-  background-color: #10B981;
+  background-color: #34c759;
 }
 
 .competency-icon.collaboration {
-  background-color: #F59E0B;
+  background-color: #ff9500;
 }
 
 .competency-icon.growth {
-  background-color: #EF4444;
+  background-color: #ff3b30;
 }
 
 .competency-title {
-  font-size: 1.25rem;
-  font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   color: var(--text-primary);
   margin-bottom: 1rem;
 }
@@ -81,16 +110,18 @@
 
 .competency-list li {
   color: var(--text-muted);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   position: relative;
-  padding-left: 1rem;
+  padding-left: 1.25rem;
+  font-size: 1.0625rem;
+  line-height: 1.5;
 }
 
 .competency-list li::before {
   content: "•";
   position: absolute;
   left: 0;
-  color: var(--primary);
+  color: var(--text-primary);
 }
 
 @media (max-width: 768px) {

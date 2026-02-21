@@ -45,13 +45,25 @@
   font-weight: 700;
   position: relative;
   background: linear-gradient(90deg, 
-    var(--primary-color) 0%, 
-    var(--primary-color) 40%, 
-    var(--accent-cyan) 50%,
-    var(--primary-color) 100%
+    #86868b 0%, 
+    #ffffff 40%, 
+    #86868b 50%,
+    #ffffff 100%
   );
   background-size: 200% 100%;
-  animation: textSparkle 10s ease-in-out;
+  animation: textSparkle 8s ease-in-out infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+html.light .sparkle-text {
+  background: linear-gradient(90deg, 
+    #86868b 0%, 
+    #1d1d1f 40%, 
+    #86868b 50%,
+    #1d1d1f 100%
+  );
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;

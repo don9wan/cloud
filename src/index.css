@@ -25,60 +25,64 @@ html, body, #root {
   width: 100%;
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: 'Pretendard', system-ui, sans-serif;
+  font-family: var(--font-body);
   font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* CSS Variables */
+/* CSS Variables - Apple Style */
 :root {
-  --primary-color: #4F87FF;
-  --primary-light: #6B95FF;
-  --primary-dark: #3366FF;
-  --accent-cyan: #66FFFF;
-  --accent-amber: #FFB800;
-  --accent-lime: #8FBC8F;
+  /* Apple Colors */
+  --primary-color: #0066cc;
+  --primary-light: #2997ff;
+  --primary-dark: #004499;
+  --accent-cyan: #32ade6;
+  --accent-amber: #ff9500;
+  --accent-lime: #34c759;
   
-  /* Dark Theme */
-  --dark-bg: #1a1a1a;
-  --dark-panel: #262626;
-  --dark-text: #f5f5f5;
-  --dark-muted: #a3a3a3;
+  /* Dark Theme (Default) */
+  --dark-bg: #000000;
+  --dark-panel: #1d1d1f;
+  --dark-text: #f5f5f7;
+  --dark-muted: #86868b;
   
   /* Light Theme */
   --light-bg: #ffffff;
-  --light-panel: #f8f9fa;
-  --light-text: #1a1a1a;
-  --light-muted: #666666;
+  --light-panel: #f5f5f7;
+  --light-text: #1d1d1f;
+  --light-muted: #86868b;
   
   /* Glass Effects */
-  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-bg: rgba(29, 29, 31, 0.7);
   --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-hover: rgba(255, 255, 255, 0.12);
+  --glass-hover: rgba(255, 255, 255, 0.15);
   --glass-light-bg: rgba(255, 255, 255, 0.7);
-  --glass-bg-solid: rgba(26, 26, 26, 0.95);
+  --glass-bg-solid: rgba(0, 0, 0, 0.95);
   
   /* Aliases for consistency */
-  --primary: var(--primary-color);
+  --primary: var(--primary-light);
   --text-primary: var(--dark-text);
   --text-muted: var(--dark-muted);
   --bg-primary: var(--dark-bg);
   
   /* Fonts */
-  --font-display: 'Pretendard', system-ui, sans-serif;
-  --font-body: 'Pretendard', system-ui, sans-serif;
+  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Pretendard", system-ui, sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Pretendard", system-ui, sans-serif;
   
-  --container-width: 1280px;
-  --section-padding: 5rem;
+  --container-width: 1200px;
+  --section-padding: 8rem;
 }
 
 /* Light theme overrides */
 html.light {
+  --primary: var(--primary-color);
   --text-primary: var(--light-text);
   --text-muted: var(--light-muted);
   --bg-primary: var(--light-bg);
   --glass-bg: rgba(255, 255, 255, 0.7);
   --glass-border: rgba(0, 0, 0, 0.1);
-  --glass-hover: rgba(255, 255, 255, 0.8);
+  --glass-hover: rgba(0, 0, 0, 0.05);
   --glass-bg-solid: rgba(255, 255, 255, 0.95);
 }
 
@@ -102,13 +106,22 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  line-height: 1.2;
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
   margin-bottom: 1rem;
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-cyan));
+  background: linear-gradient(135deg, #fff, #86868b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+html.light .text-gradient {
+  background: linear-gradient(135deg, #1d1d1f, #86868b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -117,14 +130,17 @@ h1, h2, h3, h4, h5, h6 {
 /* Glass Effect */
 .glass {
   background: var(--glass-bg);
-  backdrop-filter: blur(16px);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid var(--glass-border);
-  border-radius: 1.5rem;
+  border-radius: 24px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
 }
 
 html.light .glass {
   background: var(--glass-light-bg);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
 }
 
 /* Container */
@@ -147,7 +163,7 @@ html.light .glass {
 
 @media (max-width: 640px) {
   .section-padding {
-    padding: 3.5rem 0;
+    padding: 5rem 0;
   }
 }
 
@@ -156,43 +172,62 @@ html.light .glass {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 2rem;
+  padding: 0.875rem 1.75rem;
   border: none;
-  border-radius: 9999px;
+  border-radius: 999px;
   font-weight: 600;
-  font-size: 1.125rem;
+  font-size: 1.0625rem;
+  letter-spacing: -0.01em;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .btn:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
+}
+
+.btn:active {
+  transform: scale(0.98);
 }
 
 .btn-primary {
-  background-color: var(--primary-color);
-  color: white;
+  background-color: var(--primary-text);
+  color: var(--bg-primary);
+}
+
+html.dark .btn-primary {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+html.light .btn-primary {
+  background-color: #1d1d1f;
+  color: #ffffff;
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-dark);
+  opacity: 0.9;
 }
 
 .btn-ghost {
-  background-color: var(--glass-bg);
+  background-color: rgba(255, 255, 255, 0.1);
   color: var(--dark-text);
-  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .btn-ghost:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
-body.light .btn-ghost {
-  background-color: var(--glass-light-bg);
+html.light .btn-ghost {
+  background-color: rgba(0, 0, 0, 0.05);
   color: var(--light-text);
-  border-color: rgba(0, 0, 0, 0.1);
+}
+
+html.light .btn-ghost:hover {
+  background-color: rgba(0, 0, 0, 0.08);
 }
 
 /* Animations */

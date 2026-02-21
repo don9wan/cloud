@@ -4,18 +4,19 @@
   bottom: 2rem;
   right: 2rem;
   z-index: 1000;
-  width: 3rem;
-  height: 3rem;
-  background: var(--primary);
-  border: none;
+  width: 3.5rem;
+  height: 3.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  color: white;
+  color: var(--text-primary);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   
   /* GPU 가속을 위한 3D transform 사용 */
   transform: translate3d(0, 20px, 0);
@@ -24,14 +25,20 @@
   
   /* 개별 속성별 transition으로 최적화 */
   transition: 
-    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 0.2s ease,
-    box-shadow 0.2s ease;
+    opacity 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
+    visibility 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
+    transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
   
   /* 성능 최적화를 위한 will-change */
   will-change: transform, opacity;
+}
+
+html.light .scroll-to-top {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .scroll-to-top.visible {
@@ -41,13 +48,18 @@
 }
 
 .scroll-to-top:hover {
-  background: var(--primary-hover);
-  transform: translate3d(0, -2px, 0);
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+  transform: translate3d(0, -4px, 0) scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+html.light .scroll-to-top:hover {
+  background: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .scroll-to-top:active {
-  transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0) scale(0.95);
 }
 
 /* 모바일에서 크기 조정 */
@@ -57,17 +69,5 @@
     right: 1.5rem;
     width: 3rem;
     height: 3rem;
-  }
-}
-
-/* 다크 모드 스타일 */
-@media (prefers-color-scheme: dark) {
-  .scroll-to-top {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-  }
-  
-  .scroll-to-top:hover {
-    background: var(--primary);
   }
 }

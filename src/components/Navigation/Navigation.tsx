@@ -7,15 +7,12 @@ export default function Navigation() {
   const [isVisible, setIsVisible] = useState(false);
   const { theme, setTheme } = useTheme();
 
-  // 스크롤 위치에 따라 네비게이션 표시/숨김
+  // 스크롤 위치에 따라 네비게이션 스타일 변경
   useEffect(() => {
     const handleScroll = () => {
-      // Opening 컴포넌트의 높이를 기준으로 판단 (대략 100vh)
       const scrollY = window.scrollY;
-      const viewportHeight = window.innerHeight;
-      
-      // Opening 컴포넌트를 지나면 네비게이션 표시
-      setIsVisible(scrollY > viewportHeight * 0.8);
+      // 스크롤을 조금이라도 하면 배경을 더 진하게 만듦
+      setIsVisible(scrollY > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -59,7 +56,7 @@ export default function Navigation() {
   };
 
   return (
-    <nav id="navbar" className={`navbar ${isVisible ? 'navbar-visible' : 'navbar-hidden'}`}>
+    <nav id="navbar" className={`navbar ${isVisible ? 'scrolled' : ''}`}>
       <div className="container-custom">
         <div className="navbar-container">
           {/* Logo */}

@@ -2,25 +2,34 @@
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-dark-bg);
+  background: var(--bg-primary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-primary);
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  border: 2px solid var(--bg-primary);
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-primary-700);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
 }
 
 /* Focus styles for accessibility */
 *:focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
 
@@ -28,7 +37,7 @@
 @media (prefers-contrast: high) {
   .glass {
     background: rgba(255, 255, 255, 0.2);
-    border: 2px solid var(--color-primary);
+    border: 2px solid var(--primary);
   }
 }
 
@@ -40,7 +49,7 @@
   }
   
   .text-gradient {
-    color: var(--color-primary) !important;
+    color: var(--primary) !important;
     -webkit-text-fill-color: unset !important;
   }
 }
