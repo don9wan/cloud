@@ -58,7 +58,7 @@ html.light .timeline-line {
 .timeline-items {
   display: flex;
   flex-direction: column;
-  gap: 6rem;
+  gap: 3rem;
 }
 
 .timeline-item {
@@ -111,10 +111,35 @@ html.light .timeline-icon {
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid var(--glass-border);
-  border-radius: 32px;
-  padding: 2.5rem;
+  border-radius: 24px;
+  padding: 2rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: all 0.7s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.timeline-card:hover::before {
+  left: 150%;
 }
 
 html.light .timeline-card {
@@ -124,12 +149,14 @@ html.light .timeline-card {
 }
 
 .timeline-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-8px) scale(1.02);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 html.light .timeline-card:hover {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.1);
 }
 
 .experience-period {

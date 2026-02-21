@@ -10,6 +10,54 @@
   overflow: hidden;
 }
 
+/* Dynamic Background Elements */
+.hero-section::before,
+.hero-section::after {
+  content: '';
+  position: absolute;
+  width: 60vw;
+  height: 60vw;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: 0;
+  opacity: 0.2;
+  animation: floatBlob 20s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.hero-section::before {
+  top: -10%;
+  left: -10%;
+  background: radial-gradient(circle, var(--primary-light) 0%, transparent 70%);
+}
+
+.hero-section::after {
+  bottom: -10%;
+  right: -10%;
+  background: radial-gradient(circle, var(--accent-cyan) 0%, transparent 70%);
+  animation-delay: -10s;
+}
+
+html.light .hero-section::before,
+html.light .hero-section::after {
+  opacity: 0.2;
+}
+
+@keyframes floatBlob {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(5%, 10%) scale(1.1);
+  }
+  66% {
+    transform: translate(-5%, 5%) scale(0.9);
+  }
+  100% {
+    transform: translate(0, -10%) scale(1);
+  }
+}
+
 /* 모바일/태블릿에서는 Navigation 높이만큼 추가 패딩 */
 @media (max-width: 1023px) {
   .hero-section {
@@ -27,7 +75,7 @@
 @media (min-width: 1024px) {
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 5rem;
+    gap: 0;
   }
 }
 
@@ -151,11 +199,21 @@ html.light .hero-image {
 .hero-media {
   display: flex;
   justify-content: center;
+  animation: floatCard 6s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 @media (min-width: 1024px) {
   .hero-media {
-    justify-content: end;
+    display: none;
   }
 }
 
@@ -169,4 +227,9 @@ html.light .hero-image {
   aspect-ratio: 5 / 6;
   object-fit: cover;
   object-position: center;
+  transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.hero-image:hover {
+  transform: scale(1.03) rotate(1deg);
 }

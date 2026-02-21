@@ -66,6 +66,9 @@ export default function TechStack() {
     ? techStackData 
     : techStackData.filter(item => item.category === activeCategory);
 
+  // For the marquee, we'll use all items
+  const marqueeItems = [...techStackData, ...techStackData]; // Duplicate for seamless loop
+
   return (
     <section id="stack" className="section-padding techstack-section">
       <div className="container-custom">
@@ -78,8 +81,23 @@ export default function TechStack() {
           </p>
         </div>
 
+        {/* Infinite Marquee */}
+        <div className="techstack-marquee-container scroll-trigger stagger-1">
+          <div className="techstack-marquee">
+            {marqueeItems.map((item, index) => {
+              const IconComponent = getIconComponent(item.icon);
+              return (
+                <div key={`marquee-${index}`} className="marquee-item glass">
+                  <IconComponent className="marquee-icon" />
+                  <span className="marquee-text">{item.name.replace('\n', ' ')}</span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
         {/* Category Tabs */}
-        <div className="techstack-categories scroll-trigger">
+        <div className="techstack-categories scroll-trigger stagger-2">
           {categories.map((category) => (
             <button
               key={category.id}

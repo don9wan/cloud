@@ -28,9 +28,65 @@ html.light .techstack-section {
   font-size: 1.25rem;
   color: var(--text-muted);
   max-width: 48rem;
-  margin: 0 auto 5rem;
+  margin: 0 auto 3rem;
   text-align: center;
   letter-spacing: -0.01em;
+}
+
+/* Infinite Marquee */
+.techstack-marquee-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 4rem;
+  padding: 1rem 0;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.techstack-marquee {
+  display: flex;
+  width: max-content;
+  animation: scrollMarquee 40s linear infinite;
+  gap: 1.5rem;
+}
+
+.techstack-marquee:hover {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: transform 0.3s ease;
+}
+
+.marquee-item:hover {
+  transform: scale(1.05);
+}
+
+.marquee-icon {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+}
+
+.marquee-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 0.75rem));
+  }
 }
 
 .techstack-categories {
@@ -83,27 +139,27 @@ html.light .techstack-category-btn:hover {
 .techstack-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 1rem;
 }
 
 @media (min-width: 768px) {
   .techstack-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2.5rem;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
   }
 }
 
 @media (min-width: 1024px) {
   .techstack-grid {
-    grid-template-columns: repeat(6, 1fr);
-    gap: 3rem;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1.5rem;
   }
 }
 
 @media (min-width: 1280px) {
   .techstack-grid {
-    grid-template-columns: repeat(8, 1fr);
-    gap: 3rem;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 1.5rem;
   }
 }
 
@@ -112,11 +168,36 @@ html.light .techstack-category-btn:hover {
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid var(--glass-border);
-  border-radius: 24px;
-  padding: 1.5rem;
+  border-radius: 20px;
+  padding: 1.25rem 1rem;
   text-align: center;
   transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.techstack-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: all 0.7s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.techstack-item:hover::before {
+  left: 150%;
 }
 
 html.light .techstack-item {
@@ -126,12 +207,14 @@ html.light .techstack-item {
 }
 
 .techstack-item:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 html.light .techstack-item:hover {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.1);
 }
 
 .techstack-icon {
