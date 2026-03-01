@@ -30,10 +30,10 @@ html.light .contact-section {
 }
 
 .contact-subtitle {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   color: var(--text-muted);
   margin-bottom: 3rem;
-  max-width: 36rem;
+  max-width: 42rem;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.5;

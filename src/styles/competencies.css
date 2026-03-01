@@ -21,9 +21,9 @@
 }
 
 .competencies-subtitle {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   color: var(--text-muted);
-  max-width: 48rem;
+  max-width: 42rem;
   margin: 0 auto 5rem;
   text-align: center;
   letter-spacing: -0.01em;
@@ -82,7 +82,7 @@ html.light .competency-card:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -93,19 +93,7 @@ html.light .competency-icon {
 }
 
 .competency-icon.strategy {
-  background-color: #0071e3;
-}
-
-.competency-icon.analytics {
-  background-color: #34c759;
-}
-
-.competency-icon.collaboration {
-  background-color: #ff9500;
-}
-
-.competency-icon.growth {
-  background-color: #ff3b30;
+  background-color: #222222;
 }
 
 .competency-title {
@@ -124,10 +112,10 @@ html.light .competency-icon {
 
 .competency-list li {
   color: var(--text-muted);
-  margin-bottom: 0.75rem;
+  margin-top: 1rem;
   position: relative;
-  padding-left: 1.25rem;
-  font-size: 1.0625rem;
+  padding-left: 1rem;
+  font-size: 0.925rem;
   line-height: 1.5;
 }
 

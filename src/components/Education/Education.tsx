@@ -15,7 +15,7 @@ export default function Education() {
             교육 및 대외실적
           </h2>
           <p className="education-subtitle">
-            IT 서비스 관리에 필요한 다양한 분야에 대한 지식을 체득하고, 실적을 쌓아왔습니다.
+            이론적 지식을 체득하고, 실제 프로젝트에 적용하여 대외실적을 쌓아왔습니다.
           </p>
         </div>
 

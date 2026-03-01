@@ -20,8 +20,8 @@ export default function Contact() {
         <div className="contact-content">
           <div className="scroll-trigger">
             <h2 className="contact-title">
-              함께 혁신적인 제품을<br />
-              <span className="sparkle-text-infinite">만들어보세요</span>
+              고객이 의존하는 서비스를<br />
+              <span className="sparkle-text">함께 만들어보세요</span>
             </h2>
             <p className="contact-subtitle">
               {contactData.message}
@@ -29,19 +29,19 @@ export default function Contact() {
 
             <div className="contact-buttons scroll-trigger stagger-1">
               <a
-                href={`mailto:${contactData.email}`}
-                className="btn btn-primary"
-              >
-                <Mail className="w-5 h-5" style={{ marginRight: '0.75rem' }} />
-                이메일 보내기
-              </a>
-              <a
                 href="/pdf/don9wan_resume.pdf"
                 download="don9wan_resume.pdf"
                 className="btn btn-ghost glass"
               >
-                <Download className="w-5 h-5" style={{ marginRight: '0.75rem' }} />
+                <Download className="w-5 h-5" style={{ width: '1.25rem', height: '1.25rem', marginRight: '0.75rem' }} />
                 이력서 다운로드
+              </a>
+              <a
+                href={`mailto:${contactData.email}`}
+                className="btn btn-primary"
+              >
+                <Mail className="w-5 h-5" style={{ width: '1.25rem', height: '1.25rem', marginRight: '0.75rem' }} />
+                이메일 보내기
               </a>
             </div>
             {/* Social Links */}

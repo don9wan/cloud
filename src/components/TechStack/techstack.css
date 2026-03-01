@@ -25,7 +25,7 @@ html.light .techstack-section {
 }
 
 .techstack-subtitle {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   color: var(--text-muted);
   max-width: 48rem;
   margin: 0 auto 3rem;
@@ -70,7 +70,7 @@ html.light .techstack-section {
 }
 
 .marquee-icon {
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: var(--text-primary);
 }
 

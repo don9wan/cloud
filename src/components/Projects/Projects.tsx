@@ -15,7 +15,7 @@ export default function Projects() {
             주요 프로젝트
           </h2>
           <p className="projects-subtitle">
-            사용자 중심의 제품 개발과 비즈니스 임팩트를 창출한 프로젝트들입니다
+            이론과 실무를 넘나들며 밀도 있게 실행해온 프로젝트들입니다.
           </p>
         </div>
 

@@ -60,6 +60,7 @@ export default function TechStack() {
     { id: "design", label: "UX/UI 디자인" },
     { id: "analytics", label: "데이터 분석·시각화" },
     { id: "project", label: "프로젝트 관리" },
+    { id: "ai", label: "AI" },
   ];
 
   const filteredItems = activeCategory === "all" 
@@ -77,7 +78,7 @@ export default function TechStack() {
             기술 스택
           </h2>
           <p className="techstack-subtitle">
-            다양한 도구와 플랫폼을 활용하여 효율적인 제품 관리를 합니다
+            핵심 역량을 실행하기 위해 체득해온 기술스택입니다. 문제 해결을 위해 언제, 무엇이든 추가될 수 있습니다.
           </p>
         </div>
 

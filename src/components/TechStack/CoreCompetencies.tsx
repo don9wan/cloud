@@ -29,7 +29,7 @@ export default function CoreCompetencies() {
             핵심 역량
           </h2>
           <p className="competencies-subtitle">
-            데이터 기반 의사결정과 사용자 중심 사고로 제품의 성공을 이끕니다
+            문제에 대한 최적의 솔루션을 빠르게 찾기 위해 다양한 분야의 역량을 체득해왔습니다. 이러한 경험 덕분에 다양한 이해관계자의 입장을 이해하고 효율적으로 소통합니다.
           </p>
         </div>
 

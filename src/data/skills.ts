@@ -5,6 +5,7 @@ export enum TechCategory {
   DESIGN = "design",
   PROJECT = "project",
   ANALYTICS = "analytics",
+  AI = "ai",
 }
 
 export const skillsData = [
@@ -39,7 +40,7 @@ export const skillsData = [
     ]
   },
   {
-    title: "팀 협업",
+    title: "운영 및 팀 협업",
     icon: "messages-square",
     color: "accent-cyan",
     bullets: [
@@ -57,12 +58,12 @@ export const techStackData = [
   { name: "PPT Design", icon: "SiMicrosoftpowerpoint", color: "accent-lime", category: TechCategory.DESIGN, proficiency: 80 },
 
   // ********* Analytics ********* //
-  { name: "SQL", icon: "SiMysql", color: "accent-lime", category: TechCategory.ANALYTICS, proficiency: 40 },
-  { name: "Mysql", icon: "SiMysql", color: "accent-lime", category: TechCategory.ANALYTICS, proficiency: 30 },
+  { name: "SQL", icon: "SiMysql", color: "accent-lime", category: TechCategory.ANALYTICS, proficiency: 60 },
+  { name: "Mysql", icon: "SiMysql", color: "accent-lime", category: TechCategory.ANALYTICS, proficiency: 50 },
   { name: "Python", icon: "SiPython", color: "primary", category: TechCategory.ANALYTICS, proficiency: 30 },
   { name: "Jupyter Notebook", icon: "SiJupyter", color: "primary", category: TechCategory.ANALYTICS, proficiency: 50 },
   { name: "Kibana", icon: "SiKibana", color: "accent-lime", category: TechCategory.ANALYTICS, proficiency: 40 },
-  { name: "Google Analytics", icon: "SiGoogleanalytics", color: "accent-lime", category: TechCategory.ANALYTICS, proficiency: 50 },
+  { name: "Google Analytics", icon: "SiGoogleanalytics", color: "accent-lime", category: TechCategory.ANALYTICS, proficiency: 60 },
   
   // ********* Project Management ********* //
   { name: "Jira", icon: "SiJira", color: "accent-lime", category: TechCategory.PROJECT, proficiency: 70 },
@@ -79,5 +80,12 @@ export const techStackData = [
   { name: "Git Flow", icon: "SiGit", color: "accent-lime", category: TechCategory.DEVELOPMENT, proficiency: 80 },
   { name: "Github", icon: "SiGithub", color: "accent-lime", category: TechCategory.DEVELOPMENT, proficiency: 80 },
   { name: "Firebase", icon: "SiFirebase", color: "accent-lime", category: TechCategory.DEVELOPMENT, proficiency: 60 },
-  { name: "Open API", icon: "SiSwagger", color: "accent-lime", category: TechCategory.DEVELOPMENT, proficiency: 40 },
+
+  // ********* AI ********* //
+  { name: "Open API", icon: "SiOpenai", color: "accent-lime", category: TechCategory.AI, proficiency: 50 },
+  { name: "Chat GPT", icon: "SiOpenai", color: "accent-lime", category: TechCategory.AI, proficiency: 70 },
+  { name: "Gemini", icon: "SiGooglegemini", color: "accent-lime", category: TechCategory.AI, proficiency: 70 },
+  { name: "Perplexity", icon: "SiPerplexity", color: "accent-lime", category: TechCategory.AI, proficiency: 50 },
+  { name: "Claude Code", icon: "SiClaude", color: "accent-lime", category: TechCategory.AI, proficiency: 60 },
+  { name: "Manus Agent", icon: "SiMeta", color: "accent-lime", category: TechCategory.AI, proficiency: 70 },
 ];

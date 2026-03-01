@@ -28,7 +28,7 @@ export default function Experience() {
             걸어온 길
           </h2>
           <p className="experience-subtitle">
-            다양한 스타트업과 기업에서의 경험을 통해 성장해왔습니다
+            기획한 아이디어를 구현하는 개발자부터 사업을 설계하는 창업가를 거쳐, 이제는 고객이 의존하는 제품을 치밀하게 설계하는 PM이 되려 합니다.
           </p>
         </div>
 

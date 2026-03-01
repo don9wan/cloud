@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Moon, Sun, Menu, Download, Mail } from "lucide-react";
+import { Menu, Download, Mail } from "lucide-react";
 import { useTheme } from "../../hooks/useTheme";
 
 export default function Navigation() {
@@ -104,14 +104,14 @@ export default function Navigation() {
                 download="don9wan_resume.pdf"
                 className="btn btn-ghost"
               >
-                <Download className="w-4 h-4" style={{ marginRight: '0.5rem' }} />
+                <Download className="w-4 h-4" style={{ width: '1.125rem', height: '1.125rem', marginRight: '0.5rem' }} />
                 이력서
               </a>
               <a 
                 href="mailto:pm.don9wan@tukorea.ac.kr" 
                 className="btn btn-primary"
               >
-                <Mail className="w-4 h-4" style={{ marginRight: '0.5rem' }} />
+                <Mail className="w-4 h-4" style={{ width: '1.125rem', height: '1.125rem', marginRight: '0.5rem' }} />
                 연락하기
               </a>
             </div>
@@ -144,14 +144,14 @@ export default function Navigation() {
                 download="don9wan_resume.pdf"
                 className="btn btn-ghost"
               >
-                <Download className="w-4 h-4" style={{ marginRight: '0.5rem' }} />
+                <Download className="w-4 h-4" style={{ width: '1rem', height: '1rem', marginRight: '0.5rem' }} />
                 이력서 다운로드
               </a>
               <a 
                 href="mailto:pm.don9wan@tukorea.ac.kr" 
                 className="btn btn-primary"
               >
-                <Mail className="w-4 h-4" style={{ marginRight: '0.5rem' }} />
+                <Mail className="w-4 h-4" style={{ width: '1rem', height: '1rem', marginRight: '0.5rem' }} />
                 연락하기
               </a>
             </div>
