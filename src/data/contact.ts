@@ -6,6 +6,5 @@ export const contactData = {
     linkedin: "https://www.linkedin.com/in/don9wan",
     github: "https://github.com/don9wan",
     velog: "https://velog.io/@dongwan999/posts",
-    instagram: "https://www.instagram.com/don9wan/"
   }
 };

@@ -31,7 +31,7 @@
 
 .timeline-container {
   position: relative;
-  max-width: 800px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -219,14 +219,14 @@ html.light .timeline-card:hover {
 
 @media (min-width: 1024px) {
   .timeline-content-left {
-    width: 45%;
+    width: calc(50% - 3.5rem);
     margin-left: 0;
     margin-right: auto;
     padding-right: 0;
   }
   
   .timeline-content-right {
-    width: 45%;
+    width: calc(50% - 3.5rem);
     margin-left: auto;
     margin-right: 0;
     padding-left: 0;
