@@ -303,10 +303,67 @@ html.light .modal-close-btn:hover {
   border-radius: 16px;
   overflow: hidden;
   background: rgba(0, 0, 0, 0.2);
+  position: relative;
+  aspect-ratio: 16 / 9;
 }
 
 html.light .slider-image-wrapper {
   background: rgba(0, 0, 0, 0.04);
+}
+
+/* Skeleton loading placeholder */
+.slider-skeleton {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+html.light .slider-skeleton {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.slider-skeleton-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    -45deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.06) 50%,
+    transparent 60%
+  );
+  background-size: 300% 300%;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+
+html.light .slider-skeleton-shimmer {
+  background: linear-gradient(
+    -45deg,
+    transparent 40%,
+    rgba(0, 0, 0, 0.04) 50%,
+    transparent 60%
+  );
+  background-size: 300% 300%;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+.slider-image.loading {
+  opacity: 0;
+  position: absolute;
+}
+
+.slider-image.loaded {
+  opacity: 1;
+  position: relative;
 }
 
 .slider-image {

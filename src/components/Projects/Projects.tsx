@@ -6,6 +6,7 @@ import { useScrollTrigger } from "../../hooks/useScrollTrigger";
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<typeof projectsData[0] | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   // Initialize scroll trigger for animations
   useScrollTrigger();
@@ -13,6 +14,7 @@ export default function Projects() {
   const openModal = (project: typeof projectsData[0]) => {
     setSelectedProject(project);
     setCurrentSlide(0);
+    setImageLoaded(false);
     document.body.style.overflow = "hidden";
   };
 
@@ -24,12 +26,14 @@ export default function Projects() {
 
   const nextSlide = useCallback(() => {
     if (selectedProject?.images) {
+      setImageLoaded(false);
       setCurrentSlide((prev) => (prev + 1) % selectedProject.images.length);
     }
   }, [selectedProject]);
 
   const prevSlide = useCallback(() => {
     if (selectedProject?.images) {
+      setImageLoaded(false);
       setCurrentSlide((prev) => (prev - 1 + selectedProject.images.length) % selectedProject.images.length);
     }
   }, [selectedProject]);
@@ -120,10 +124,16 @@ export default function Projects() {
               </button>
 
               <div className="slider-image-wrapper">
+                {!imageLoaded && (
+                  <div className="slider-skeleton">
+                    <div className="slider-skeleton-shimmer" />
+                  </div>
+                )}
                 <img
                   src={selectedProject.images[currentSlide]}
                   alt={`${selectedProject.title} - ${currentSlide + 1}`}
-                  className="slider-image"
+                  className={`slider-image ${imageLoaded ? 'loaded' : 'loading'}`}
+                  onLoad={() => setImageLoaded(true)}
                 />
               </div>
 
