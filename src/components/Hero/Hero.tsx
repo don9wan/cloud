@@ -19,7 +19,7 @@ export default function Hero() {
             <div className="hero-text-container scroll-trigger">
               {/* @TODO(): 소개 - 헤드라인 */}
               <h1 className="hero-title">
-                고객이 장기적으로<br />
+                고객이 지속적으로<br />
                 <span className="sparkle-text">의존하는 제품</span>을<br />
                 함께 만들어갑니다
               </h1>
