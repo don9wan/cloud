@@ -15,7 +15,7 @@ export default function Education() {
             교육 및 대외실적
           </h2>
           <p className="education-subtitle">
-            이론적 지식을 체득하고, 실제 프로젝트에 적용하여 대외실적을 쌓아왔습니다.
+            이론적 지식을 체득하고, 실제 프로젝트에 적용하여 여러 대외실적을 쌓아왔습니다.
           </p>
         </div>
 

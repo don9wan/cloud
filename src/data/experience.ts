@@ -34,7 +34,7 @@ export const experienceData = [
   },
   {
     company: "한국공학대학교 IT경영",
-    role: "Startup Founder",
+    role: "Startup Team Leader",
     period: "2024.03 - 2025.12",
     type: "체리픽 창업팀",
     icon: "shipWheel",
@@ -56,7 +56,7 @@ export const experienceData = [
     type: "새회사",
     icon: "briefcaseBusiness",
     color: "accent-amber",
-    summary: "창업 실패 경험을 통해 더 이상 '내'가 아닌 '고객'이 원하는 아이디어를 실현하고자 합니다. 고객의 행동에서 드러나는 고충, 비즈니스 목표, 기술의 접점에서 최적의 솔루션을 제시하며, 이제는 '돈을 버는 실적'을 쌓아 올리고자 합니다.",
+    summary: "창업 실패 경험을 통해 더 이상 내가 아닌 '고객'이 원하는 아이디어를 실현하고자 합니다. 고객의 행동에서 드러나는 고충, 비즈니스 목표, 기술의 접점에서 최적의 솔루션을 제시하며, 이제는 돈을 버는 실적'을 쌓아 올리고자 합니다.",
     impacts: [
       "다음 실적을 올리기 위한 조직을 찾고 있습니다."
     ]

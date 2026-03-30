@@ -89,4 +89,10 @@ export const awardsData = [
         awards: "최우수상",
         title: "TU-VCC 창업 성과공유대회",
     },
+    {
+        period: "2025-03",
+        publisher: "부산광역시",
+        awards: "자격인정 (취업을 위한 활동중단)",
+        title: "부산광역시 예비창업패키지 선정",
+    },
 ];
