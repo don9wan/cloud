@@ -78,7 +78,7 @@ export default function TechStack() {
             기술 스택
           </h2>
           <p className="techstack-subtitle">
-            핵심 역량을 실행하기 위해 체득해온 기술스택입니다. 문제 해결을 위해 언제, 무엇이든 추가될 수 있습니다.
+            프로젝트 목표 달성을 위해 자유롭게 활용해 온 기술 스택입니다. 최적의 솔루션을 실행하기 위해서라면 언제, 무엇이든 추가될 수 있습니다.
           </p>
         </div>
 
@@ -124,14 +124,14 @@ export default function TechStack() {
                   {item.name}
                 </div>
                 {/* Progress Bar */}
-                <div className="techstack-proficiency">
+                {/* <div className="techstack-proficiency">
                   <div className="proficiency-bar-container">
                     <div 
                       className={`proficiency-bar-fill ${iconClass}`}
                       style={{ width: `${item.proficiency}%` }}
                     />
                   </div>
-                </div>
+                </div> */}
               </div>
             );
           })}
